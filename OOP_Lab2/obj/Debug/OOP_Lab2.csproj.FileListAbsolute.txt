@@ -1,0 +1,12 @@
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\bin\Debug\OOP_Lab2.exe.config
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\bin\Debug\OOP_Lab2.exe
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\bin\Debug\OOP_Lab2.pdb
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.csprojAssemblyReference.cache
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.Properties.Resources.resources
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.csproj.GenerateResource.cache
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.csproj.CoreCompileInputs.cache
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.exe
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.pdb
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.AirplaneInfo.resources
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.CrewMemberInfo.resources
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.Manufacturer.resources
