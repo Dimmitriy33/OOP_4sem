@@ -1,56 +1,27 @@
 <?xml version="1.0"?>
 <ArrayOfAirplane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Airplane>
-    <id xmlns="Airport">11</id>
-    <type xmlns="Airport">пассажирский</type>
-    <model xmlns="Airport">w1w</model>
-    <crewmembers xmlns="Airport">
-      <cewmember>
-        <Surname>ww</Surname>
-        <Name>ww</Name>
-        <Patronymic>ww</Patronymic>
-        <Position>Стюардесса</Position>
-        <Age>20</Age>
-        <Experience>2</Experience>
-      </cewmember>
-    </crewmembers>
-    <numberofpassenges xmlns="Airport">2</numberofpassenges>
+    <id xmlns="Airport">1</id>
+    <crewmembers xmlns="Airport" />
+    <numberofpassenges xmlns="Airport">3</numberofpassenges>
     <yearofissue xmlns="Airport">1902</yearofissue>
-    <carrying xmlns="Airport">1003</carrying>
-    <Date xmlns="Airport">2021-02-01</Date>
+    <carrying xmlns="Airport">1002</carrying>
+    <Date xmlns="Airport">0001-01-01</Date>
     <manufacturer xmlns="Airport">
-      <Name>www</Name>
-      <Country>wwwwww</Country>
-      <YearOfFoundation>1906</YearOfFoundation>
-      <TypesOfAircraft>
-        <string>турбовинтовые</string>
-      </TypesOfAircraft>
+      <YearOfFoundation>0</YearOfFoundation>
+      <TypesOfAircraft />
     </manufacturer>
   </Airplane>
   <Airplane>
-    <id xmlns="Airport">33</id>
-    <type xmlns="Airport">пассажирский</type>
-    <model xmlns="Airport">ee1</model>
-    <crewmembers xmlns="Airport">
-      <cewmember>
-        <Surname>ee</Surname>
-        <Name>e</Name>
-        <Patronymic>ee</Patronymic>
-        <Age>23</Age>
-        <Experience>4</Experience>
-      </cewmember>
-    </crewmembers>
-    <numberofpassenges xmlns="Airport">7</numberofpassenges>
-    <yearofissue xmlns="Airport">1910</yearofissue>
-    <carrying xmlns="Airport">1009</carrying>
-    <Date xmlns="Airport">2021-02-05</Date>
+    <id xmlns="Airport">2</id>
+    <crewmembers xmlns="Airport" />
+    <numberofpassenges xmlns="Airport">3</numberofpassenges>
+    <yearofissue xmlns="Airport">1904</yearofissue>
+    <carrying xmlns="Airport">1004</carrying>
+    <Date xmlns="Airport">2021-02-21</Date>
     <manufacturer xmlns="Airport">
-      <Name>ee</Name>
-      <Country>ee</Country>
-      <YearOfFoundation>1904</YearOfFoundation>
-      <TypesOfAircraft>
-        <string>поршневые</string>
-      </TypesOfAircraft>
+      <YearOfFoundation>0</YearOfFoundation>
+      <TypesOfAircraft />
     </manufacturer>
   </Airplane>
 </ArrayOfAirplane>

@@ -57,6 +57,7 @@ namespace OOP_Lab2
             this.SearchButton = new System.Windows.Forms.Button();
             this.SortListBox = new System.Windows.Forms.ListBox();
             this.SortButton = new System.Windows.Forms.Button();
+            this.AboutProgram = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).BeginInit();
@@ -351,12 +352,13 @@ namespace OOP_Lab2
             // 
             // SearchButton
             // 
+            this.SearchButton.BackColor = System.Drawing.Color.LavenderBlush;
             this.SearchButton.Location = new System.Drawing.Point(1007, 63);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(141, 65);
             this.SearchButton.TabIndex = 42;
             this.SearchButton.Text = "Поиск";
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SortListBox
@@ -368,7 +370,7 @@ namespace OOP_Lab2
             "количеству мест",
             "грузоподъемности",
             "номеру самолета"});
-            this.SortListBox.Location = new System.Drawing.Point(1007, 337);
+            this.SortListBox.Location = new System.Drawing.Point(1005, 174);
             this.SortListBox.Name = "SortListBox";
             this.SortListBox.Size = new System.Drawing.Size(143, 68);
             this.SortListBox.TabIndex = 43;
@@ -376,7 +378,7 @@ namespace OOP_Lab2
             // SortButton
             // 
             this.SortButton.BackColor = System.Drawing.Color.LightGreen;
-            this.SortButton.Location = new System.Drawing.Point(1007, 411);
+            this.SortButton.Location = new System.Drawing.Point(1005, 260);
             this.SortButton.Name = "SortButton";
             this.SortButton.Size = new System.Drawing.Size(143, 48);
             this.SortButton.TabIndex = 44;
@@ -384,9 +386,21 @@ namespace OOP_Lab2
             this.SortButton.UseVisualStyleBackColor = false;
             this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
+            // AboutProgram
+            // 
+            this.AboutProgram.BackColor = System.Drawing.Color.AliceBlue;
+            this.AboutProgram.Location = new System.Drawing.Point(1035, 426);
+            this.AboutProgram.Name = "AboutProgram";
+            this.AboutProgram.Size = new System.Drawing.Size(125, 33);
+            this.AboutProgram.TabIndex = 45;
+            this.AboutProgram.Text = "О программе";
+            this.AboutProgram.UseVisualStyleBackColor = false;
+            this.AboutProgram.Click += new System.EventHandler(this.AboutProgram_Click);
+            // 
             // AirplaneInfo
             // 
             this.ClientSize = new System.Drawing.Size(1172, 471);
+            this.Controls.Add(this.AboutProgram);
             this.Controls.Add(this.SortButton);
             this.Controls.Add(this.SortListBox);
             this.Controls.Add(this.SearchButton);
@@ -456,6 +470,7 @@ namespace OOP_Lab2
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.ListBox SortListBox;
         private System.Windows.Forms.Button SortButton;
+        private System.Windows.Forms.Button AboutProgram;
     }
 }
 

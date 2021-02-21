@@ -300,5 +300,10 @@ namespace OOP_Lab2
                     break;
             }
         }
+
+        private void AboutProgram_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("version 1.0\nShalunov Dmitriy", "About program");
+        }
     }
 }
