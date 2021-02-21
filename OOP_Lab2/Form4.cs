@@ -109,7 +109,7 @@ namespace OOP_Lab2
                             && (!SearchTypeValue.Modified || airplane.Type == searchElem.Type))
                             searchResult.Add(airplane);
                     if (SearchNumberOfPassengersValue.Modified)
-                        if (airplane.Carrying == searchElem.NumberOfPassengers && !searchResult.Contains(airplane)
+                        if (airplane.NumberOfPassengers == searchElem.NumberOfPassengers && !searchResult.Contains(airplane)
                             && (!SearchTypeValue.Modified || airplane.Type == searchElem.Type)
                             && (!SearchCarryingValue.Modified || airplane.Carrying == searchElem.Carrying))
                             searchResult.Add(airplane);
@@ -121,9 +121,9 @@ namespace OOP_Lab2
                             && !searchResult.Contains(airplane))
                             searchResult.Add(airplane);
                 }
+                SearchOut.ResetText();
                 foreach (Airplane AirportItem in searchResult)
                 {
-
                     SearchOut.AppendText("\n---------------------------------------------\n\r\n");
                     SearchOut.AppendText($" Airplane №{ AirportItem.ID}\r\n");
                     SearchOut.AppendText($" Тип: {AirportItem.Type}\r\n");

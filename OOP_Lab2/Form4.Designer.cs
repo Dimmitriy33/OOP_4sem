@@ -162,6 +162,7 @@ namespace OOP_Lab2
             this.SearchOut.Location = new System.Drawing.Point(15, 162);
             this.SearchOut.Multiline = true;
             this.SearchOut.Name = "SearchOut";
+            this.SearchOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.SearchOut.Size = new System.Drawing.Size(577, 280);
             this.SearchOut.TabIndex = 52;
             // 
