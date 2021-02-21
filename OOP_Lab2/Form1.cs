@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -214,6 +215,89 @@ namespace OOP_Lab2
         {
             SearchForm searchForm = new SearchForm(airport);
             searchForm.Show();
+        }
+
+        private void SerializePlusPrint(string path, List<Airplane> list)
+        {
+            //Serialize
+            try
+            {
+                if (File.Exists(path))
+                    File.Delete(path);
+                XmlSerializer formatter1 = new XmlSerializer(typeof(List<Airplane>));
+                using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    formatter1.Serialize(file, list);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            //Deserialize
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Airplane>));
+            using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                List<Airplane> deserAirport = (List<Airplane>)formatter.Deserialize(file);
+                OutTextValue.Text += "Самолеты\r\n";
+                foreach (Airplane AirportItem in deserAirport)
+                {
+
+                    OutTextValue.AppendText("\n---------------------------------------------\n\r\n");
+                    OutTextValue.AppendText($" Airplane №{ AirportItem.ID}\r\n");
+                    OutTextValue.AppendText($" Тип: {AirportItem.Type}\r\n");
+                    OutTextValue.AppendText($" Модель: {AirportItem.Model}\r\n");
+                    OutTextValue.AppendText($" Количество пасадочных мест: {AirportItem.NumberOfPassengers}\r\n");
+                    OutTextValue.AppendText($" Год выпуска: {AirportItem.YearOfIssue}\r\n");
+                    OutTextValue.AppendText($" Грузоподъемность: {AirportItem.Carrying}\r\n");
+                    OutTextValue.AppendText($" Дата последнего тех.обслуживания: {AirportItem.DateOfTheLatestMaintenance.Date}." +
+                        $"{AirportItem.DateOfTheLatestMaintenance.Month}.{AirportItem.DateOfTheLatestMaintenance.Year}\r\n");
+                    OutTextValue.AppendText(" Экипаж:\r\n");
+                    foreach (CrewMember item in AirportItem.CrewMembers)
+                    {
+                        OutTextValue.AppendText($"  Член экипажа №{AirportItem.CrewMembers.IndexOf(item) + 1}\r\n");
+                        OutTextValue.AppendText($"  Фамилия: {item.Surname}\r\n");
+                        OutTextValue.AppendText($"  Имя: {item.Name}\r\n");
+                        OutTextValue.AppendText($"  Отчество: {item.Patronymic}\r\n");
+                        OutTextValue.AppendText($"  Должность: {item.Position}\r\n");
+                        OutTextValue.AppendText($"  Возраст: {item.Age}\r\n");
+                        OutTextValue.AppendText($"  Стаж(лет): {item.Experience}\r\n");
+                    }
+                    OutTextValue.AppendText(" Производитель\r\n");
+                    OutTextValue.AppendText($"  Название: {AirportItem.AirplaneManufacturer.Name}\r\n");
+                    OutTextValue.AppendText($"  Страна: {AirportItem.AirplaneManufacturer.Country}\r\n");
+                    OutTextValue.AppendText($"  Год основания: {AirportItem.AirplaneManufacturer.YearOfFoundation}\r\n");
+                    OutTextValue.AppendText($"  Типы производимых самолетов: \r\n");
+                    foreach (string el in AirportItem.AirplaneManufacturer.TypesOfAircraft)
+                        OutTextValue.AppendText($"   {el}\r\n");
+                }
+            }
+        }
+
+        private void SortButton_Click(object sender, EventArgs e)
+        {
+            switch (SortListBox.SelectedItem.ToString())
+            {
+                case "году выпуска":
+                    var sortedAirportByYear = airport.OrderBy(item => item.YearOfIssue);
+                    SerializePlusPrint("..\\..\\AirportSortByYear.xml", (List<Airplane>)sortedAirportByYear);
+                    break;
+                case "количеству мест":
+                    var sortedAirportByPlaces = airport.OrderBy(item => item.NumberOfPassengers);
+                    SerializePlusPrint("..\\..\\AirportSortByPlaces.xml", (List<Airplane>)sortedAirportByPlaces);
+                    break;
+                case "грузоподъемности":
+                    var sortedAirportByCarrying = airport.OrderBy(item => item.Carrying);
+                    SerializePlusPrint("..\\..\\AirportSortByCarrying.xml", (List<Airplane>)sortedAirportByCarrying);
+                    break;
+                case "номеру самолета":
+                    var sortedAirportByNumberOfAirplane = airport.OrderBy(item => item.ID);
+                    SerializePlusPrint("..\\..\\sortedAirportByNumberOfAirplane.xml", (List<Airplane>)sortedAirportByNumberOfAirplane);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

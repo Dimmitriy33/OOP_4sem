@@ -55,6 +55,8 @@ namespace OOP_Lab2
             this.OutText = new System.Windows.Forms.Label();
             this.WriteInfoAboutAirplanes_Button = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.SortListBox = new System.Windows.Forms.ListBox();
+            this.SortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).BeginInit();
@@ -137,7 +139,7 @@ namespace OOP_Lab2
             // 
             this.ModelValue.Location = new System.Drawing.Point(10, 260);
             this.ModelValue.Name = "ModelValue";
-            this.ModelValue.Size = new System.Drawing.Size(110, 22);
+            this.ModelValue.Size = new System.Drawing.Size(119, 22);
             this.ModelValue.TabIndex = 7;
             this.ModelValue.TextChanged += new System.EventHandler(this.ModelValue_TextChanged);
             this.ModelValue.Validating += new System.ComponentModel.CancelEventHandler(this.ModelValue_Validating);
@@ -349,17 +351,44 @@ namespace OOP_Lab2
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(994, 63);
+            this.SearchButton.Location = new System.Drawing.Point(1007, 63);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(143, 85);
+            this.SearchButton.Size = new System.Drawing.Size(141, 65);
             this.SearchButton.TabIndex = 42;
             this.SearchButton.Text = "Поиск";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // SortListBox
+            // 
+            this.SortListBox.FormattingEnabled = true;
+            this.SortListBox.ItemHeight = 16;
+            this.SortListBox.Items.AddRange(new object[] {
+            "году выпуска",
+            "количеству мест",
+            "грузоподъемности",
+            "номеру самолета"});
+            this.SortListBox.Location = new System.Drawing.Point(1007, 337);
+            this.SortListBox.Name = "SortListBox";
+            this.SortListBox.Size = new System.Drawing.Size(143, 68);
+            this.SortListBox.TabIndex = 43;
+            // 
+            // SortButton
+            // 
+            this.SortButton.BackColor = System.Drawing.Color.LightGreen;
+            this.SortButton.Location = new System.Drawing.Point(1007, 411);
+            this.SortButton.Name = "SortButton";
+            this.SortButton.Size = new System.Drawing.Size(143, 48);
+            this.SortButton.TabIndex = 44;
+            this.SortButton.Text = "Сортировка";
+            this.SortButton.UseVisualStyleBackColor = false;
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
+            // 
             // AirplaneInfo
             // 
-            this.ClientSize = new System.Drawing.Size(1149, 471);
+            this.ClientSize = new System.Drawing.Size(1172, 471);
+            this.Controls.Add(this.SortButton);
+            this.Controls.Add(this.SortListBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.WriteInfoAboutAirplanes_Button);
             this.Controls.Add(this.OutText);
@@ -425,6 +454,8 @@ namespace OOP_Lab2
         private System.Windows.Forms.Label OutText;
         private System.Windows.Forms.Button WriteInfoAboutAirplanes_Button;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.ListBox SortListBox;
+        private System.Windows.Forms.Button SortButton;
     }
 }
 
