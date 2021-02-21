@@ -24,6 +24,7 @@ namespace OOP_Lab2
 
         }
         [XmlElement(ElementName = "id")]
+        [My]
         public int ID
         {
             get => id;

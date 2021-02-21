@@ -305,5 +305,7 @@ namespace OOP_Lab2
         {
             MessageBox.Show("version 1.0\nShalunov Dmitriy", "About program");
         }
+
+
     }
 }

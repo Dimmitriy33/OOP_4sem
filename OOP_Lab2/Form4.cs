@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
 namespace OOP_Lab2
@@ -30,24 +31,30 @@ namespace OOP_Lab2
                 this.Carrying = c;
             }
 
+            [StringLength(30)]
             public string ManufacturerName
             {
                 get => manufacturerName;
                 set => manufacturerName = value;
             }
 
+            [StringLength(13)]
             public string Type
             {
                 get => type;
                 set => type = value;
             }
 
+            [My]
+            [Range(0, 300)]
             public int NumberOfPassengers
             {
                 get => numberOfPassengers;
                 set => numberOfPassengers = value;
             }
 
+            [My]
+            [Range(1000, 15000)]
             public int Carrying
             {
                 get => carrying;
