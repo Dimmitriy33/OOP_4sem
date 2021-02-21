@@ -10,3 +10,4 @@ D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.pdb
 D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.AirplaneInfo.resources
 D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.CrewMemberInfo.resources
 D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.Manufacturer.resources
+D:\учеба\ООП\4сем\OOP_4sem\OOP_Lab2\obj\Debug\OOP_Lab2.SearchForm.resources

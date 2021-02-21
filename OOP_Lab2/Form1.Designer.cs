@@ -54,7 +54,7 @@ namespace OOP_Lab2
             this.OutTextValue = new System.Windows.Forms.TextBox();
             this.OutText = new System.Windows.Forms.Label();
             this.WriteInfoAboutAirplanes_Button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).BeginInit();
@@ -347,19 +347,20 @@ namespace OOP_Lab2
             this.WriteInfoAboutAirplanes_Button.UseVisualStyleBackColor = false;
             this.WriteInfoAboutAirplanes_Button.Click += new System.EventHandler(this.WriteInfoAboutAirplanes_Button_Click);
             // 
-            // button1
+            // SearchButton
             // 
-            this.button1.Location = new System.Drawing.Point(994, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 85);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SearchButton.Location = new System.Drawing.Point(994, 63);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(143, 85);
+            this.SearchButton.TabIndex = 42;
+            this.SearchButton.Text = "Поиск";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // AirplaneInfo
             // 
             this.ClientSize = new System.Drawing.Size(1149, 471);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.WriteInfoAboutAirplanes_Button);
             this.Controls.Add(this.OutText);
             this.Controls.Add(this.OutTextValue);
@@ -423,7 +424,7 @@ namespace OOP_Lab2
         private System.Windows.Forms.TextBox OutTextValue;
         private System.Windows.Forms.Label OutText;
         private System.Windows.Forms.Button WriteInfoAboutAirplanes_Button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
 

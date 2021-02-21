@@ -209,5 +209,11 @@ namespace OOP_Lab2
                 }
         }
         #endregion
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            SearchForm searchForm = new SearchForm(airport);
+            searchForm.Show();
+        }
     }
 }
