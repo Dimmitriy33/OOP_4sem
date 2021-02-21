@@ -239,6 +239,7 @@ namespace OOP_Lab2
             XmlSerializer formatter = new XmlSerializer(typeof(List<Airplane>));
             using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
             {
+                OutTextValue.ResetText();
                 List<Airplane> deserAirport = (List<Airplane>)formatter.Deserialize(file);
                 OutTextValue.Text += "Самолеты\r\n";
                 foreach (Airplane AirportItem in deserAirport)
@@ -280,19 +281,19 @@ namespace OOP_Lab2
             switch (SortListBox.SelectedItem.ToString())
             {
                 case "году выпуска":
-                    var sortedAirportByYear = airport.OrderBy(item => item.YearOfIssue);
+                    var sortedAirportByYear = airport.OrderBy(item => item.YearOfIssue).ToList();
                     SerializePlusPrint("..\\..\\AirportSortByYear.xml", (List<Airplane>)sortedAirportByYear);
                     break;
                 case "количеству мест":
-                    var sortedAirportByPlaces = airport.OrderBy(item => item.NumberOfPassengers);
+                    var sortedAirportByPlaces = airport.OrderBy(item => item.NumberOfPassengers).ToList();
                     SerializePlusPrint("..\\..\\AirportSortByPlaces.xml", (List<Airplane>)sortedAirportByPlaces);
                     break;
                 case "грузоподъемности":
-                    var sortedAirportByCarrying = airport.OrderBy(item => item.Carrying);
+                    var sortedAirportByCarrying = airport.OrderBy(item => item.Carrying).ToList();
                     SerializePlusPrint("..\\..\\AirportSortByCarrying.xml", (List<Airplane>)sortedAirportByCarrying);
                     break;
                 case "номеру самолета":
-                    var sortedAirportByNumberOfAirplane = airport.OrderBy(item => item.ID);
+                    var sortedAirportByNumberOfAirplane = airport.OrderBy(item => item.ID).ToList();
                     SerializePlusPrint("..\\..\\sortedAirportByNumberOfAirplane.xml", (List<Airplane>)sortedAirportByNumberOfAirplane);
                     break;
                 default:
