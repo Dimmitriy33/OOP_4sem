@@ -45,7 +45,6 @@ namespace OOP_Lab2
                 set => type = value;
             }
 
-            [My]
             [Range(0, 300)]
             public int NumberOfPassengers
             {
@@ -53,7 +52,6 @@ namespace OOP_Lab2
                 set => numberOfPassengers = value;
             }
 
-            [My]
             [Range(1000, 15000)]
             public int Carrying
             {

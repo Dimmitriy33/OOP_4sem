@@ -59,7 +59,7 @@ namespace OOP_Lab2
             this.SortListBox = new System.Windows.Forms.ListBox();
             this.SortButton = new System.Windows.Forms.Button();
             this.AboutProgram = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.MainToolBar = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
@@ -67,11 +67,13 @@ namespace OOP_Lab2
             this.toolStripButtonCrew = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonManufacturer = new System.Windows.Forms.ToolStripButton();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.toolStripButtonOpenClose = new System.Windows.Forms.Button();
+            this.textBoxInfo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).BeginInit();
             this.groupType.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.MainToolBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // Number
@@ -128,6 +130,7 @@ namespace OOP_Lab2
             // TypeRadioButton3
             // 
             this.TypeRadioButton3.AutoSize = true;
+            this.TypeRadioButton3.Checked = true;
             this.TypeRadioButton3.Location = new System.Drawing.Point(9, 213);
             this.TypeRadioButton3.Name = "TypeRadioButton3";
             this.TypeRadioButton3.Size = new System.Drawing.Size(86, 21);
@@ -363,9 +366,9 @@ namespace OOP_Lab2
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.Color.LavenderBlush;
-            this.SearchButton.Location = new System.Drawing.Point(1007, 63);
+            this.SearchButton.Location = new System.Drawing.Point(1017, 61);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(141, 65);
+            this.SearchButton.Size = new System.Drawing.Size(143, 65);
             this.SearchButton.TabIndex = 42;
             this.SearchButton.Text = "Поиск";
             this.SearchButton.UseVisualStyleBackColor = false;
@@ -380,7 +383,7 @@ namespace OOP_Lab2
             "количеству мест",
             "грузоподъемности",
             "номеру самолета"});
-            this.SortListBox.Location = new System.Drawing.Point(1005, 174);
+            this.SortListBox.Location = new System.Drawing.Point(1017, 170);
             this.SortListBox.Name = "SortListBox";
             this.SortListBox.Size = new System.Drawing.Size(143, 68);
             this.SortListBox.TabIndex = 43;
@@ -388,7 +391,7 @@ namespace OOP_Lab2
             // SortButton
             // 
             this.SortButton.BackColor = System.Drawing.Color.LightGreen;
-            this.SortButton.Location = new System.Drawing.Point(1005, 260);
+            this.SortButton.Location = new System.Drawing.Point(1019, 252);
             this.SortButton.Name = "SortButton";
             this.SortButton.Size = new System.Drawing.Size(143, 48);
             this.SortButton.TabIndex = 44;
@@ -399,7 +402,7 @@ namespace OOP_Lab2
             // AboutProgram
             // 
             this.AboutProgram.BackColor = System.Drawing.Color.AliceBlue;
-            this.AboutProgram.Location = new System.Drawing.Point(1035, 426);
+            this.AboutProgram.Location = new System.Drawing.Point(1037, 426);
             this.AboutProgram.Name = "AboutProgram";
             this.AboutProgram.Size = new System.Drawing.Size(125, 33);
             this.AboutProgram.TabIndex = 45;
@@ -407,21 +410,21 @@ namespace OOP_Lab2
             this.AboutProgram.UseVisualStyleBackColor = false;
             this.AboutProgram.Click += new System.EventHandler(this.AboutProgram_Click);
             // 
-            // toolStrip1
+            // MainToolBar
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainToolBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonSearch,
             this.toolStripButtonDelete,
             this.toolStripButtonClear,
             this.toolStripButtonSort,
             this.toolStripButtonCrew,
             this.toolStripButtonManufacturer});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1172, 31);
-            this.toolStrip1.TabIndex = 46;
-            this.toolStrip1.Text = "toolStrip1";
+            this.MainToolBar.Location = new System.Drawing.Point(0, 0);
+            this.MainToolBar.Name = "MainToolBar";
+            this.MainToolBar.Size = new System.Drawing.Size(1172, 27);
+            this.MainToolBar.TabIndex = 46;
+            this.MainToolBar.Text = "toolStrip1";
             // 
             // toolStripButtonSearch
             // 
@@ -429,7 +432,7 @@ namespace OOP_Lab2
             this.toolStripButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSearch.Image")));
             this.toolStripButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSearch.Name = "toolStripButtonSearch";
-            this.toolStripButtonSearch.Size = new System.Drawing.Size(56, 28);
+            this.toolStripButtonSearch.Size = new System.Drawing.Size(56, 24);
             this.toolStripButtonSearch.Text = "Поиск";
             this.toolStripButtonSearch.Click += new System.EventHandler(this.toolStripButtonSearch_Click);
             // 
@@ -439,7 +442,7 @@ namespace OOP_Lab2
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(73, 28);
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(73, 24);
             this.toolStripButtonDelete.Text = "Удалить ";
             this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
@@ -449,7 +452,7 @@ namespace OOP_Lab2
             this.toolStripButtonClear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClear.Image")));
             this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonClear.Name = "toolStripButtonClear";
-            this.toolStripButtonClear.Size = new System.Drawing.Size(75, 28);
+            this.toolStripButtonClear.Size = new System.Drawing.Size(75, 24);
             this.toolStripButtonClear.Text = "очистить";
             this.toolStripButtonClear.Click += new System.EventHandler(this.toolStripButtonClear_Click);
             // 
@@ -459,7 +462,7 @@ namespace OOP_Lab2
             this.toolStripButtonSort.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSort.Image")));
             this.toolStripButtonSort.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSort.Name = "toolStripButtonSort";
-            this.toolStripButtonSort.Size = new System.Drawing.Size(96, 28);
+            this.toolStripButtonSort.Size = new System.Drawing.Size(96, 24);
             this.toolStripButtonSort.Text = "Сортировка";
             this.toolStripButtonSort.Click += new System.EventHandler(this.toolStripButtonSort_Click);
             // 
@@ -469,7 +472,7 @@ namespace OOP_Lab2
             this.toolStripButtonCrew.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrew.Image")));
             this.toolStripButtonCrew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCrew.Name = "toolStripButtonCrew";
-            this.toolStripButtonCrew.Size = new System.Drawing.Size(66, 28);
+            this.toolStripButtonCrew.Size = new System.Drawing.Size(66, 24);
             this.toolStripButtonCrew.Text = "Экипаж";
             this.toolStripButtonCrew.Click += new System.EventHandler(this.toolStripButtonCrew_Click);
             // 
@@ -479,7 +482,7 @@ namespace OOP_Lab2
             this.toolStripButtonManufacturer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonManufacturer.Image")));
             this.toolStripButtonManufacturer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonManufacturer.Name = "toolStripButtonManufacturer";
-            this.toolStripButtonManufacturer.Size = new System.Drawing.Size(122, 28);
+            this.toolStripButtonManufacturer.Size = new System.Drawing.Size(122, 24);
             this.toolStripButtonManufacturer.Text = "Производитель";
             this.toolStripButtonManufacturer.Click += new System.EventHandler(this.toolStripButtonManufacturer_Click);
             // 
@@ -494,11 +497,32 @@ namespace OOP_Lab2
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // toolStripButtonOpenClose
+            // 
+            this.toolStripButtonOpenClose.BackColor = System.Drawing.Color.Thistle;
+            this.toolStripButtonOpenClose.Location = new System.Drawing.Point(955, 12);
+            this.toolStripButtonOpenClose.Name = "toolStripButtonOpenClose";
+            this.toolStripButtonOpenClose.Size = new System.Drawing.Size(205, 33);
+            this.toolStripButtonOpenClose.TabIndex = 48;
+            this.toolStripButtonOpenClose.Text = "Панель управления";
+            this.toolStripButtonOpenClose.UseVisualStyleBackColor = false;
+            this.toolStripButtonOpenClose.Click += new System.EventHandler(this.toolStripButtonOpenClose_Click);
+            // 
+            // textBoxInfo
+            // 
+            this.textBoxInfo.Location = new System.Drawing.Point(978, 367);
+            this.textBoxInfo.Multiline = true;
+            this.textBoxInfo.Name = "textBoxInfo";
+            this.textBoxInfo.Size = new System.Drawing.Size(184, 53);
+            this.textBoxInfo.TabIndex = 49;
+            // 
             // AirplaneInfo
             // 
             this.ClientSize = new System.Drawing.Size(1172, 471);
+            this.Controls.Add(this.textBoxInfo);
+            this.Controls.Add(this.toolStripButtonOpenClose);
             this.Controls.Add(this.DeleteButton);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.MainToolBar);
             this.Controls.Add(this.AboutProgram);
             this.Controls.Add(this.SortButton);
             this.Controls.Add(this.SortListBox);
@@ -531,8 +555,8 @@ namespace OOP_Lab2
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).EndInit();
             this.groupType.ResumeLayout(false);
             this.groupType.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.MainToolBar.ResumeLayout(false);
+            this.MainToolBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,7 +596,7 @@ namespace OOP_Lab2
         private System.Windows.Forms.ListBox SortListBox;
         private System.Windows.Forms.Button SortButton;
         private System.Windows.Forms.Button AboutProgram;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip MainToolBar;
         private System.Windows.Forms.ToolStripButton toolStripButtonSearch;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripButton toolStripButtonClear;
@@ -580,6 +604,8 @@ namespace OOP_Lab2
         private System.Windows.Forms.ToolStripButton toolStripButtonCrew;
         private System.Windows.Forms.ToolStripButton toolStripButtonManufacturer;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button toolStripButtonOpenClose;
+        private System.Windows.Forms.TextBox textBoxInfo;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
 namespace OOP_Lab2
@@ -32,6 +33,7 @@ namespace OOP_Lab2
         }
 
         [XmlElement(ElementName = "type")]
+        [Required(ErrorMessage = "Pls choose type")]
         public string Type
         {
             get => type;
@@ -39,6 +41,8 @@ namespace OOP_Lab2
         }
 
         [XmlElement(ElementName = "model")]
+        [RegularExpression(@"((([a-zA-Zа-яА-ЯёЁ]+\d+)|(\d+[a-zA-Zа-яА-ЯёЁ]+))[a-zA-Zа-яА-ЯёЁ\d]*)",
+            ErrorMessage = "Invalid value of model")]
         public string Model
         {
             get => model;

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -21,6 +23,8 @@ namespace OOP_Lab2
             try
             {
                 airport.Clear();
+                textBoxInfo.Text = DateTime.Now.ToString() + "\r\n";
+                textBoxInfo.AppendText($"Количество объектов: {airport.Count()}");
             }
             catch
             {
@@ -175,7 +179,19 @@ namespace OOP_Lab2
 
         private void Push_Info_button_Click(object sender, EventArgs e)
         {
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(airplane);
+            if (!Validator.TryValidateObject(airplane, context, results, true))
+            {
+                var str = new StringBuilder();
+                foreach (var i in results)
+                    str.AppendLine(i.ToString() + '\n');
+                MessageBox.Show(str.ToString());
+            }
             airport.Add(airplane);
+            textBoxInfo.Clear();
+            textBoxInfo.Text = DateTime.Now.ToString();
+            textBoxInfo.AppendText($"\r\nКоличество объектов: {airport.Count()}");
             airplane = new Airplane();
             NumberValue.ResetText();
             TypeRadioButton1.Checked = false;
@@ -192,11 +208,11 @@ namespace OOP_Lab2
         #region Validation
         private void NumberValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
                 MessageBox.Show("Invalid value");
-            }*/
+            }
 
         }
 
@@ -278,29 +294,38 @@ namespace OOP_Lab2
 
         private void SortButton_Click(object sender, EventArgs e)
         {
-            switch (SortListBox.SelectedItem.ToString())
+            try
             {
-                case "году выпуска":
-                    var sortedAirportByYear = airport.OrderBy(item => item.YearOfIssue).ToList();
-                    SerializePlusPrint("..\\..\\AirportSortByYear.xml", (List<Airplane>)sortedAirportByYear);
-                    break;
-                case "количеству мест":
-                    var sortedAirportByPlaces = airport.OrderBy(item => item.NumberOfPassengers).ToList();
-                    SerializePlusPrint("..\\..\\AirportSortByPlaces.xml", (List<Airplane>)sortedAirportByPlaces);
-                    break;
-                case "грузоподъемности":
-                    var sortedAirportByCarrying = airport.OrderBy(item => item.Carrying).ToList();
-                    SerializePlusPrint("..\\..\\AirportSortByCarrying.xml", (List<Airplane>)sortedAirportByCarrying);
-                    break;
-                case "номеру самолета":
-                    var sortedAirportByNumberOfAirplane = airport.OrderBy(item => item.ID).ToList();
-                    SerializePlusPrint("..\\..\\sortedAirportByNumberOfAirplane.xml", (List<Airplane>)sortedAirportByNumberOfAirplane);
-                    break;
-                default:
-                    break;
+                switch (SortListBox.SelectedItem.ToString())
+                {
+                    case "году выпуска":
+                        var sortedAirportByYear = airport.OrderBy(item => item.YearOfIssue).ToList();
+                        SerializePlusPrint("..\\..\\AirportSortByYear.xml", (List<Airplane>)sortedAirportByYear);
+                        break;
+                    case "количеству мест":
+                        var sortedAirportByPlaces = airport.OrderBy(item => item.NumberOfPassengers).ToList();
+                        SerializePlusPrint("..\\..\\AirportSortByPlaces.xml", (List<Airplane>)sortedAirportByPlaces);
+                        break;
+                    case "грузоподъемности":
+                        var sortedAirportByCarrying = airport.OrderBy(item => item.Carrying).ToList();
+                        SerializePlusPrint("..\\..\\AirportSortByCarrying.xml", (List<Airplane>)sortedAirportByCarrying);
+                        break;
+                    case "номеру самолета":
+                        var sortedAirportByNumberOfAirplane = airport.OrderBy(item => item.ID).ToList();
+                        SerializePlusPrint("..\\..\\sortedAirportByNumberOfAirplane.xml", (List<Airplane>)sortedAirportByNumberOfAirplane);
+                        break;
+                    default:
+                        break;
+                }
             }
+            catch
+            {
+                throw new Exception("Ошибка сортировки");
+            }
+
         }
 
+        #region ToolBar
         private void AboutProgram_Click(object sender, EventArgs e)
         {
             MessageBox.Show("version 1.0\nShalunov Dmitriy", "About program");
@@ -350,5 +375,20 @@ namespace OOP_Lab2
         {
             AirplaneManufacturerLinkButton_Click(sender, e);
         }
+
+        private void toolStripButtonOpenClose_Click(object sender, EventArgs e)
+        {
+            if (MainToolBar.Visible)
+            {
+                MainToolBar.Hide();
+                MainToolBar.Text = "Отобразить";
+            }
+            else
+            {
+                MainToolBar.Show();
+                MainToolBar.Text = "Скрыть";
+            }
+        }
+        #endregion
     }
 }

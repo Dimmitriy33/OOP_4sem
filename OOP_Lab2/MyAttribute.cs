@@ -14,19 +14,15 @@ namespace OOP_Lab2
                 return false;
             }
             return true;*/
-            try
-            {
-                string str = value as string;
-                Convert.ToInt32(str.ToString());
+            int num = Convert.ToInt32(value.ToString());
 
-            }
-            catch (System.Exception)
+            if (num > 100)
             {
-
                 this.ErrorMessage = "InvalidValue";
                 return false;
             }
-            return true;
+            else
+                return true;
         }
     }
 }
