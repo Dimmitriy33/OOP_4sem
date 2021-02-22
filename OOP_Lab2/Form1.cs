@@ -192,11 +192,11 @@ namespace OOP_Lab2
         #region Validation
         private void NumberValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            /*if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
                 MessageBox.Show("Invalid value");
-            }
+            }*/
 
         }
 
@@ -306,6 +306,49 @@ namespace OOP_Lab2
             MessageBox.Show("version 1.0\nShalunov Dmitriy", "About program");
         }
 
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (airport.Count != 0)
+                airport.RemoveAt(airport.Count);
+        }
 
+        private void toolStripButtonSearch_Click(object sender, EventArgs e)
+        {
+            SearchButton_Click(sender, e);
+        }
+
+        private void toolStripButtonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteButton_Click(sender, e);
+        }
+
+        private void toolStripButtonClear_Click(object sender, EventArgs e)
+        {
+            airplane = new Airplane();
+            NumberValue.ResetText();
+            TypeRadioButton1.Checked = false;
+            TypeRadioButton2.Checked = false;
+            TypeRadioButton3.Checked = false;
+            ModelValue.ResetText();
+            NumberOfPassengersValue.ResetText();
+            YearOfIssueValue.ResetText();
+            CarryingValue.ResetText();
+            dateTimePicker1.ResetText();
+        }
+
+        private void toolStripButtonSort_Click(object sender, EventArgs e)
+        {
+            SortButton_Click(sender, e);
+        }
+
+        private void toolStripButtonCrew_Click(object sender, EventArgs e)
+        {
+            CrewMemberLinkButton_Click(sender, e);
+        }
+
+        private void toolStripButtonManufacturer_Click(object sender, EventArgs e)
+        {
+            AirplaneManufacturerLinkButton_Click(sender, e);
+        }
     }
 }

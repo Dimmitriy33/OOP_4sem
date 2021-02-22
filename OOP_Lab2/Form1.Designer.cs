@@ -29,6 +29,7 @@ namespace OOP_Lab2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AirplaneInfo));
             this.Number = new System.Windows.Forms.Label();
             this.NumberValue = new System.Windows.Forms.TextBox();
             this.Type = new System.Windows.Forms.Label();
@@ -58,16 +59,25 @@ namespace OOP_Lab2
             this.SortListBox = new System.Windows.Forms.ListBox();
             this.SortButton = new System.Windows.Forms.Button();
             this.AboutProgram = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSort = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCrew = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonManufacturer = new System.Windows.Forms.ToolStripButton();
+            this.DeleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).BeginInit();
             this.groupType.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Number
             // 
             this.Number.AutoSize = true;
-            this.Number.Location = new System.Drawing.Point(7, 43);
+            this.Number.Location = new System.Drawing.Point(9, 55);
             this.Number.Name = "Number";
             this.Number.Size = new System.Drawing.Size(118, 17);
             this.Number.TabIndex = 0;
@@ -75,7 +85,7 @@ namespace OOP_Lab2
             // 
             // NumberValue
             // 
-            this.NumberValue.Location = new System.Drawing.Point(10, 63);
+            this.NumberValue.Location = new System.Drawing.Point(12, 75);
             this.NumberValue.Name = "NumberValue";
             this.NumberValue.Size = new System.Drawing.Size(110, 22);
             this.NumberValue.TabIndex = 1;
@@ -118,7 +128,7 @@ namespace OOP_Lab2
             // TypeRadioButton3
             // 
             this.TypeRadioButton3.AutoSize = true;
-            this.TypeRadioButton3.Location = new System.Drawing.Point(7, 201);
+            this.TypeRadioButton3.Location = new System.Drawing.Point(9, 213);
             this.TypeRadioButton3.Name = "TypeRadioButton3";
             this.TypeRadioButton3.Size = new System.Drawing.Size(86, 21);
             this.TypeRadioButton3.TabIndex = 5;
@@ -130,7 +140,7 @@ namespace OOP_Lab2
             // Model
             // 
             this.Model.AutoSize = true;
-            this.Model.Location = new System.Drawing.Point(7, 240);
+            this.Model.Location = new System.Drawing.Point(9, 252);
             this.Model.Name = "Model";
             this.Model.Size = new System.Drawing.Size(125, 17);
             this.Model.TabIndex = 6;
@@ -138,7 +148,7 @@ namespace OOP_Lab2
             // 
             // ModelValue
             // 
-            this.ModelValue.Location = new System.Drawing.Point(10, 260);
+            this.ModelValue.Location = new System.Drawing.Point(12, 272);
             this.ModelValue.Name = "ModelValue";
             this.ModelValue.Size = new System.Drawing.Size(119, 22);
             this.ModelValue.TabIndex = 7;
@@ -148,7 +158,7 @@ namespace OOP_Lab2
             // DateOfTheLatestMaintenance
             // 
             this.DateOfTheLatestMaintenance.AutoSize = true;
-            this.DateOfTheLatestMaintenance.Location = new System.Drawing.Point(157, 238);
+            this.DateOfTheLatestMaintenance.Location = new System.Drawing.Point(159, 250);
             this.DateOfTheLatestMaintenance.Name = "DateOfTheLatestMaintenance";
             this.DateOfTheLatestMaintenance.Size = new System.Drawing.Size(249, 17);
             this.DateOfTheLatestMaintenance.TabIndex = 30;
@@ -156,7 +166,7 @@ namespace OOP_Lab2
             // 
             // CarryingValue
             // 
-            this.CarryingValue.Location = new System.Drawing.Point(175, 171);
+            this.CarryingValue.Location = new System.Drawing.Point(177, 183);
             this.CarryingValue.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -180,7 +190,7 @@ namespace OOP_Lab2
             // Carrying
             // 
             this.Carrying.AutoSize = true;
-            this.Carrying.Location = new System.Drawing.Point(172, 151);
+            this.Carrying.Location = new System.Drawing.Point(174, 163);
             this.Carrying.Name = "Carrying";
             this.Carrying.Size = new System.Drawing.Size(133, 17);
             this.Carrying.TabIndex = 28;
@@ -188,7 +198,7 @@ namespace OOP_Lab2
             // 
             // YearOfIssueValue
             // 
-            this.YearOfIssueValue.Location = new System.Drawing.Point(175, 117);
+            this.YearOfIssueValue.Location = new System.Drawing.Point(177, 129);
             this.YearOfIssueValue.Maximum = new decimal(new int[] {
             2021,
             0,
@@ -212,7 +222,7 @@ namespace OOP_Lab2
             // YearOfIssue
             // 
             this.YearOfIssue.AutoSize = true;
-            this.YearOfIssue.Location = new System.Drawing.Point(172, 97);
+            this.YearOfIssue.Location = new System.Drawing.Point(174, 109);
             this.YearOfIssue.Name = "YearOfIssue";
             this.YearOfIssue.Size = new System.Drawing.Size(90, 17);
             this.YearOfIssue.TabIndex = 26;
@@ -220,7 +230,7 @@ namespace OOP_Lab2
             // 
             // NumberOfPassengersValue
             // 
-            this.NumberOfPassengersValue.Location = new System.Drawing.Point(175, 63);
+            this.NumberOfPassengersValue.Location = new System.Drawing.Point(177, 75);
             this.NumberOfPassengersValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -239,7 +249,7 @@ namespace OOP_Lab2
             // NumberOfPassengers
             // 
             this.NumberOfPassengers.AutoSize = true;
-            this.NumberOfPassengers.Location = new System.Drawing.Point(172, 43);
+            this.NumberOfPassengers.Location = new System.Drawing.Point(174, 55);
             this.NumberOfPassengers.Name = "NumberOfPassengers";
             this.NumberOfPassengers.Size = new System.Drawing.Size(216, 17);
             this.NumberOfPassengers.TabIndex = 24;
@@ -247,7 +257,7 @@ namespace OOP_Lab2
             // 
             // CrewMemberLinkButton
             // 
-            this.CrewMemberLinkButton.Location = new System.Drawing.Point(12, 313);
+            this.CrewMemberLinkButton.Location = new System.Drawing.Point(12, 315);
             this.CrewMemberLinkButton.Name = "CrewMemberLinkButton";
             this.CrewMemberLinkButton.Size = new System.Drawing.Size(124, 56);
             this.CrewMemberLinkButton.TabIndex = 32;
@@ -259,7 +269,7 @@ namespace OOP_Lab2
             // 
             this.AirplaneHead.AutoSize = true;
             this.AirplaneHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AirplaneHead.Location = new System.Drawing.Point(5, 9);
+            this.AirplaneHead.Location = new System.Drawing.Point(12, 27);
             this.AirplaneHead.Name = "AirplaneHead";
             this.AirplaneHead.Size = new System.Drawing.Size(105, 25);
             this.AirplaneHead.TabIndex = 33;
@@ -267,7 +277,7 @@ namespace OOP_Lab2
             // 
             // AirplaneManufacturerLinkButton
             // 
-            this.AirplaneManufacturerLinkButton.Location = new System.Drawing.Point(12, 385);
+            this.AirplaneManufacturerLinkButton.Location = new System.Drawing.Point(12, 401);
             this.AirplaneManufacturerLinkButton.Name = "AirplaneManufacturerLinkButton";
             this.AirplaneManufacturerLinkButton.Size = new System.Drawing.Size(124, 56);
             this.AirplaneManufacturerLinkButton.TabIndex = 34;
@@ -277,7 +287,7 @@ namespace OOP_Lab2
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 258);
+            this.dateTimePicker1.Location = new System.Drawing.Point(162, 270);
             this.dateTimePicker1.MaxDate = new System.DateTime(2021, 2, 10, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -289,9 +299,9 @@ namespace OOP_Lab2
             // Push_Info_button
             // 
             this.Push_Info_button.BackColor = System.Drawing.Color.LightCoral;
-            this.Push_Info_button.Location = new System.Drawing.Point(202, 313);
+            this.Push_Info_button.Location = new System.Drawing.Point(152, 315);
             this.Push_Info_button.Name = "Push_Info_button";
-            this.Push_Info_button.Size = new System.Drawing.Size(167, 56);
+            this.Push_Info_button.Size = new System.Drawing.Size(131, 76);
             this.Push_Info_button.TabIndex = 36;
             this.Push_Info_button.Text = "Занести информацию о самолете";
             this.Push_Info_button.UseVisualStyleBackColor = false;
@@ -302,7 +312,7 @@ namespace OOP_Lab2
             this.groupType.Controls.Add(this.TypeRadioButton2);
             this.groupType.Controls.Add(this.TypeRadioButton1);
             this.groupType.Controls.Add(this.Type);
-            this.groupType.Location = new System.Drawing.Point(1, 111);
+            this.groupType.Location = new System.Drawing.Point(3, 123);
             this.groupType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.groupType.Name = "groupType";
             this.groupType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -313,7 +323,7 @@ namespace OOP_Lab2
             // ShowInfoAboutAirplanes_Button
             // 
             this.ShowInfoAboutAirplanes_Button.BackColor = System.Drawing.Color.LightGreen;
-            this.ShowInfoAboutAirplanes_Button.Location = new System.Drawing.Point(287, 385);
+            this.ShowInfoAboutAirplanes_Button.Location = new System.Drawing.Point(289, 397);
             this.ShowInfoAboutAirplanes_Button.Name = "ShowInfoAboutAirplanes_Button";
             this.ShowInfoAboutAirplanes_Button.Size = new System.Drawing.Size(131, 65);
             this.ShowInfoAboutAirplanes_Button.TabIndex = 38;
@@ -342,7 +352,7 @@ namespace OOP_Lab2
             // WriteInfoAboutAirplanes_Button
             // 
             this.WriteInfoAboutAirplanes_Button.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.WriteInfoAboutAirplanes_Button.Location = new System.Drawing.Point(150, 385);
+            this.WriteInfoAboutAirplanes_Button.Location = new System.Drawing.Point(152, 397);
             this.WriteInfoAboutAirplanes_Button.Name = "WriteInfoAboutAirplanes_Button";
             this.WriteInfoAboutAirplanes_Button.Size = new System.Drawing.Size(131, 65);
             this.WriteInfoAboutAirplanes_Button.TabIndex = 41;
@@ -397,9 +407,98 @@ namespace OOP_Lab2
             this.AboutProgram.UseVisualStyleBackColor = false;
             this.AboutProgram.Click += new System.EventHandler(this.AboutProgram_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonSearch,
+            this.toolStripButtonDelete,
+            this.toolStripButtonClear,
+            this.toolStripButtonSort,
+            this.toolStripButtonCrew,
+            this.toolStripButtonManufacturer});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1172, 31);
+            this.toolStrip1.TabIndex = 46;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonSearch
+            // 
+            this.toolStripButtonSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSearch.Image")));
+            this.toolStripButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearch.Name = "toolStripButtonSearch";
+            this.toolStripButtonSearch.Size = new System.Drawing.Size(56, 28);
+            this.toolStripButtonSearch.Text = "Поиск";
+            this.toolStripButtonSearch.Click += new System.EventHandler(this.toolStripButtonSearch_Click);
+            // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(73, 28);
+            this.toolStripButtonDelete.Text = "Удалить ";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
+            // 
+            // toolStripButtonClear
+            // 
+            this.toolStripButtonClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonClear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClear.Image")));
+            this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClear.Name = "toolStripButtonClear";
+            this.toolStripButtonClear.Size = new System.Drawing.Size(75, 28);
+            this.toolStripButtonClear.Text = "очистить";
+            this.toolStripButtonClear.Click += new System.EventHandler(this.toolStripButtonClear_Click);
+            // 
+            // toolStripButtonSort
+            // 
+            this.toolStripButtonSort.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSort.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSort.Image")));
+            this.toolStripButtonSort.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSort.Name = "toolStripButtonSort";
+            this.toolStripButtonSort.Size = new System.Drawing.Size(96, 28);
+            this.toolStripButtonSort.Text = "Сортировка";
+            this.toolStripButtonSort.Click += new System.EventHandler(this.toolStripButtonSort_Click);
+            // 
+            // toolStripButtonCrew
+            // 
+            this.toolStripButtonCrew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCrew.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCrew.Image")));
+            this.toolStripButtonCrew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCrew.Name = "toolStripButtonCrew";
+            this.toolStripButtonCrew.Size = new System.Drawing.Size(66, 28);
+            this.toolStripButtonCrew.Text = "Экипаж";
+            this.toolStripButtonCrew.Click += new System.EventHandler(this.toolStripButtonCrew_Click);
+            // 
+            // toolStripButtonManufacturer
+            // 
+            this.toolStripButtonManufacturer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonManufacturer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonManufacturer.Image")));
+            this.toolStripButtonManufacturer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonManufacturer.Name = "toolStripButtonManufacturer";
+            this.toolStripButtonManufacturer.Size = new System.Drawing.Size(122, 28);
+            this.toolStripButtonManufacturer.Text = "Производитель";
+            this.toolStripButtonManufacturer.Click += new System.EventHandler(this.toolStripButtonManufacturer_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.AliceBlue;
+            this.DeleteButton.Location = new System.Drawing.Point(289, 315);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(131, 76);
+            this.DeleteButton.TabIndex = 47;
+            this.DeleteButton.Text = "Удалить информацию о последнем самолете";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // AirplaneInfo
             // 
             this.ClientSize = new System.Drawing.Size(1172, 471);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.AboutProgram);
             this.Controls.Add(this.SortButton);
             this.Controls.Add(this.SortListBox);
@@ -432,6 +531,8 @@ namespace OOP_Lab2
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).EndInit();
             this.groupType.ResumeLayout(false);
             this.groupType.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,6 +572,14 @@ namespace OOP_Lab2
         private System.Windows.Forms.ListBox SortListBox;
         private System.Windows.Forms.Button SortButton;
         private System.Windows.Forms.Button AboutProgram;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSearch;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClear;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSort;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCrew;
+        private System.Windows.Forms.ToolStripButton toolStripButtonManufacturer;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
 
