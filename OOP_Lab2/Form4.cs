@@ -119,10 +119,10 @@ namespace OOP_Lab2
                             && (!SearchCarryingValue.Modified || airplane.Carrying == searchElem.Carrying))
                             searchResult.Add(airplane);
                     if (SearchManufacturerNameValue.Modified)
-                        if (airplane.AirplaneManufacturer.Name.Equals(searchElem.ManufacturerName)
-                            && (!SearchTypeValue.Modified || airplane.Type.Equals(searchElem.Type))
-                            && (!SearchCarryingValue.Modified || airplane.Carrying.Equals(searchElem.Carrying))
-                            && (!SearchNumberOfPassengersValue.Modified || airplane.Carrying.Equals(searchElem.NumberOfPassengers))
+                        if (airplane.AirplaneManufacturer.Name == searchElem.ManufacturerName
+                            && (!SearchTypeValue.Modified || airplane.Type == searchElem.Type)
+                            && (!SearchCarryingValue.Modified || airplane.Carrying == searchElem.Carrying)
+                            && (!SearchNumberOfPassengersValue.Modified || airplane.Carrying == searchElem.NumberOfPassengers)
                             && !searchResult.Contains(airplane))
                             searchResult.Add(airplane);
                 }

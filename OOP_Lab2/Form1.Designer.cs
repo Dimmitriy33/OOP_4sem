@@ -130,12 +130,10 @@ namespace OOP_Lab2
             // TypeRadioButton3
             // 
             this.TypeRadioButton3.AutoSize = true;
-            this.TypeRadioButton3.Checked = true;
-            this.TypeRadioButton3.Location = new System.Drawing.Point(9, 213);
+            this.TypeRadioButton3.Location = new System.Drawing.Point(5, 90);
             this.TypeRadioButton3.Name = "TypeRadioButton3";
             this.TypeRadioButton3.Size = new System.Drawing.Size(86, 21);
             this.TypeRadioButton3.TabIndex = 5;
-            this.TypeRadioButton3.TabStop = true;
             this.TypeRadioButton3.Text = "военный";
             this.TypeRadioButton3.UseVisualStyleBackColor = true;
             this.TypeRadioButton3.CheckedChanged += new System.EventHandler(this.TypeRadioButtons_CheckedChanged);
@@ -315,11 +313,12 @@ namespace OOP_Lab2
             this.groupType.Controls.Add(this.TypeRadioButton2);
             this.groupType.Controls.Add(this.TypeRadioButton1);
             this.groupType.Controls.Add(this.Type);
-            this.groupType.Location = new System.Drawing.Point(3, 123);
+            this.groupType.Controls.Add(this.TypeRadioButton3);
+            this.groupType.Location = new System.Drawing.Point(12, 109);
             this.groupType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.groupType.Name = "groupType";
             this.groupType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.groupType.Size = new System.Drawing.Size(131, 115);
+            this.groupType.Size = new System.Drawing.Size(141, 126);
             this.groupType.TabIndex = 37;
             this.groupType.TabStop = false;
             // 
@@ -531,7 +530,6 @@ namespace OOP_Lab2
             this.Controls.Add(this.OutText);
             this.Controls.Add(this.OutTextValue);
             this.Controls.Add(this.ShowInfoAboutAirplanes_Button);
-            this.Controls.Add(this.TypeRadioButton3);
             this.Controls.Add(this.groupType);
             this.Controls.Add(this.Push_Info_button);
             this.Controls.Add(this.dateTimePicker1);

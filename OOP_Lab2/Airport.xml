@@ -1,27 +1,2 @@
 <?xml version="1.0"?>
-<ArrayOfAirplane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Airplane>
-    <id xmlns="Airport">1</id>
-    <crewmembers xmlns="Airport" />
-    <numberofpassenges xmlns="Airport">3</numberofpassenges>
-    <yearofissue xmlns="Airport">1902</yearofissue>
-    <carrying xmlns="Airport">1002</carrying>
-    <Date xmlns="Airport">0001-01-01</Date>
-    <manufacturer xmlns="Airport">
-      <YearOfFoundation>0</YearOfFoundation>
-      <TypesOfAircraft />
-    </manufacturer>
-  </Airplane>
-  <Airplane>
-    <id xmlns="Airport">2</id>
-    <crewmembers xmlns="Airport" />
-    <numberofpassenges xmlns="Airport">3</numberofpassenges>
-    <yearofissue xmlns="Airport">1904</yearofissue>
-    <carrying xmlns="Airport">1004</carrying>
-    <Date xmlns="Airport">2021-02-21</Date>
-    <manufacturer xmlns="Airport">
-      <YearOfFoundation>0</YearOfFoundation>
-      <TypesOfAircraft />
-    </manufacturer>
-  </Airplane>
-</ArrayOfAirplane>
+<ArrayOfAirplane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

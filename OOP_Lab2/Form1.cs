@@ -334,7 +334,9 @@ namespace OOP_Lab2
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             if (airport.Count != 0)
-                airport.RemoveAt(airport.Count);
+                airport.RemoveAt(airport.Count - 1);
+            textBoxInfo.Text = DateTime.Now.ToString() + "\r\n";
+            textBoxInfo.AppendText($"Количество объектов: {airport.Count()}");
         }
 
         private void toolStripButtonSearch_Click(object sender, EventArgs e)
