@@ -98,6 +98,8 @@
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplaneBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\PassangerAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplaneTechnicalCharacteristics.cs" />
+    <Compile Include="UserSettings.cs" />
+    <Compile Include="SingletonAirport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\TechnicalCharacteristicsFactory.cs" />

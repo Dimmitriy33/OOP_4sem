@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Xml.Serialization;
 
 namespace OOP_Lab2
 {
     [Serializable]
-    [XmlRoot(Namespace = "Airport")]
-    [XmlType("Airplane")]
     public class Airplane
     {
         public IBaseInfo baseInfo { get; set; }
         public ITechnicalCharacteristics technicalCharacteristics { get; set; }
+        public Airplane()
+        {
+
+        }
 
         public Airplane(IAirplaneFactory airplaneFactory)
         {

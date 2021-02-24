@@ -10,7 +10,6 @@ namespace OOP_Lab2
     public delegate void AddToAirport2(AirplaneManufacturer manufacturer);
     public partial class AirplaneInfo : Form
     {
-
         List<Airplane> airport = new List<Airplane>();
         private IAirplaneFactory factory;
         Airplane airplane;
