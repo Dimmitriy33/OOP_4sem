@@ -12,5 +12,6 @@ namespace OOP_Lab2
         List<CrewMember> CrewMembers { get; set; }
         int NumberOfPassengers { get; set; }
         DateTime DateOfTheLatestMaintenance { get; set; }
+        string PrintInfoAboutClass();
     }
 }

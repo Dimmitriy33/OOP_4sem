@@ -65,10 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Airplane.cs" />
-    <Compile Include="BaseInfoFactory.cs" />
-    <Compile Include="CargoAirplaneBaseInfo.cs" />
-    <Compile Include="CargoAirplaneFactory.cs" />
-    <Compile Include="CargoAirplaneTechnicalCharacteristics.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\BaseInfoFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneBaseInfo.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\CargoAirplaneFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneTechnicalCharacteristics.cs" />
     <Compile Include="CrewMember.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -89,18 +89,18 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="AirPlaneManufacturer.cs" />
-    <Compile Include="IAirplaneFactory.cs" />
-    <Compile Include="IBaseInfo.cs" />
-    <Compile Include="ITechnicalCharacteristics.cs" />
-    <Compile Include="MilitaryAirplaneBaseInfo.cs" />
-    <Compile Include="MilitaryAirplaneFactory.cs" />
-    <Compile Include="MilitaryAirplaneTechnicalCharacteristics.cs" />
-    <Compile Include="PassangerAirplaneBaseInfo.cs" />
-    <Compile Include="PassangerAirplaneFactory.cs" />
-    <Compile Include="PassangerAirplaneTechnicalCharacteristics.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\IAirplaneFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\IBaseInfo.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\ITechnicalCharacteristics.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\elements\MilitaryAirplaneBaseInfo.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\MilitaryAirplaneFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\elements\MilitaryAirplaneTechnicalCharacteristics.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplaneBaseInfo.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\PassangerAirplaneFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplaneTechnicalCharacteristics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TechnicalCharacteristicsFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\TechnicalCharacteristicsFactory.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,5 +144,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
