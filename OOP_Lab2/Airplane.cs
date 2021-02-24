@@ -9,6 +9,7 @@ namespace OOP_Lab2
     [XmlType("Airplane")]
     public class Airplane
     {
+
         private int id;
         private string type;
         private string model;
