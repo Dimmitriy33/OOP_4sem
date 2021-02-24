@@ -12,7 +12,9 @@ namespace OOP_Lab2
     {
 
         List<Airplane> airport = new List<Airplane>();
-        public Airplane airplane = new Airplane();
+        private IAirplaneFactory factory;
+        Airplane airplane;
+
 
         public AirplaneInfo()
         {
@@ -26,15 +28,19 @@ namespace OOP_Lab2
 
             }
         }
+        private void AirplaneInfo_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Первым укажите тип самолета!");
+        }
 
         public void AddToAirportCrewMembers(List<CrewMember> crewMembersList)
         {
-            airplane.CrewMembers = crewMembersList;
+            airplane.baseInfo.CrewMembers = crewMembersList;
         }
 
         public void AddToAirportManufacrurer(AirplaneManufacturer manufacturer)
         {
-            airplane.AirplaneManufacturer = manufacturer;
+            airplane.technicalCharacteristics.AirplaneManufacturer = manufacturer;
         }
 
         private void CrewMemberLinkButton_Click(object sender, System.EventArgs e)
@@ -53,7 +59,7 @@ namespace OOP_Lab2
         {
             try
             {
-                airplane.ID = Convert.ToInt32(NumberValue.Text);
+                airplane.baseInfo.ID = Convert.ToInt32(NumberValue.Text);
             }
             catch
             {
@@ -64,23 +70,35 @@ namespace OOP_Lab2
         private void TypeRadioButtons_CheckedChanged(object sender, EventArgs e)
         {
             if (TypeRadioButton1.Checked)
-                airplane.Type = TypeRadioButton1.Text;
+            {
+                factory = new PassangerAirplaneFactory();
+                airplane = new Airplane(factory);
+                airplane.baseInfo.Type = TypeRadioButton1.Text;
+            }
             else if (TypeRadioButton2.Checked)
-                airplane.Type = TypeRadioButton2.Text;
+            {
+                factory = new CargoAirplaneFactory();
+                airplane = new Airplane(factory);
+                airplane.baseInfo.Type = TypeRadioButton2.Text;
+            }
             else if (TypeRadioButton1.Checked)
-                airplane.Type = TypeRadioButton3.Text;
+            {
+                factory = new MilitaryAirplaneFactory();
+                airplane = new Airplane(factory);
+                airplane.baseInfo.Type = TypeRadioButton3.Text;
+            }
         }
 
         private void ModelValue_TextChanged(object sender, EventArgs e)
         {
-            airplane.Model = ModelValue.Text;
+            airplane.baseInfo.Model = ModelValue.Text;
         }
 
         private void NumberOfPassengersValue_ValueChanged(object sender, EventArgs e)
         {
             try
             {
-                airplane.NumberOfPassengers = Convert.ToInt32(NumberOfPassengersValue.Value);
+                airplane.baseInfo.NumberOfPassengers = Convert.ToInt32(NumberOfPassengersValue.Value);
             }
             catch
             {
@@ -92,7 +110,7 @@ namespace OOP_Lab2
         {
             try
             {
-                airplane.YearOfIssue = Convert.ToInt32(YearOfIssueValue.Value);
+                airplane.baseInfo.YearOfIssue = Convert.ToInt32(YearOfIssueValue.Value);
             }
             catch { }
         }
@@ -101,7 +119,7 @@ namespace OOP_Lab2
         {
             try
             {
-                airplane.Carrying = Convert.ToInt32(CarryingValue.Value);
+                airplane.technicalCharacteristics.Carrying = Convert.ToInt32(CarryingValue.Value);
             }
             catch
             {
@@ -111,7 +129,7 @@ namespace OOP_Lab2
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            airplane.DateOfTheLatestMaintenance = dateTimePicker1.Value;
+            airplane.baseInfo.DateOfTheLatestMaintenance = dateTimePicker1.Value;
         }
         #region WriteShowInfo
         private void ShowInfoAboutAirplanes_Button_Click(object sender, EventArgs e)
@@ -125,18 +143,18 @@ namespace OOP_Lab2
                 {
 
                     OutTextValue.AppendText("\n---------------------------------------------\n\r\n");
-                    OutTextValue.AppendText($" Airplane №{ AirportItem.ID}\r\n");
-                    OutTextValue.AppendText($" Тип: {AirportItem.Type}\r\n");
-                    OutTextValue.AppendText($" Модель: {AirportItem.Model}\r\n");
-                    OutTextValue.AppendText($" Количество пасадочных мест: {AirportItem.NumberOfPassengers}\r\n");
-                    OutTextValue.AppendText($" Год выпуска: {AirportItem.YearOfIssue}\r\n");
-                    OutTextValue.AppendText($" Грузоподъемность: {AirportItem.Carrying}\r\n");
-                    OutTextValue.AppendText($" Дата последнего тех.обслуживания: {AirportItem.DateOfTheLatestMaintenance.Date}." +
-                        $"{AirportItem.DateOfTheLatestMaintenance.Month}.{AirportItem.DateOfTheLatestMaintenance.Year}\r\n");
+                    OutTextValue.AppendText($" Airplane №{ AirportItem.baseInfo.ID}\r\n");
+                    OutTextValue.AppendText($" Тип: {AirportItem.baseInfo.Type}\r\n");
+                    OutTextValue.AppendText($" Модель: {AirportItem.baseInfo.Model}\r\n");
+                    OutTextValue.AppendText($" Количество пасадочных мест: {AirportItem.baseInfo.NumberOfPassengers}\r\n");
+                    OutTextValue.AppendText($" Год выпуска: {AirportItem.baseInfo.YearOfIssue}\r\n");
+                    OutTextValue.AppendText($" Грузоподъемность: {AirportItem.technicalCharacteristics.Carrying}\r\n");
+                    OutTextValue.AppendText($" Дата последнего тех.обслуживания: {AirportItem.baseInfo.DateOfTheLatestMaintenance.Date}." +
+                        $"{AirportItem.baseInfo.DateOfTheLatestMaintenance.Month}.{AirportItem.baseInfo.DateOfTheLatestMaintenance.Year}\r\n");
                     OutTextValue.AppendText(" Экипаж:\r\n");
-                    foreach (CrewMember item in AirportItem.CrewMembers)
+                    foreach (CrewMember item in AirportItem.baseInfo.CrewMembers)
                     {
-                        OutTextValue.AppendText($"  Член экипажа №{AirportItem.CrewMembers.IndexOf(item) + 1}\r\n");
+                        OutTextValue.AppendText($"  Член экипажа №{AirportItem.baseInfo.CrewMembers.IndexOf(item) + 1}\r\n");
                         OutTextValue.AppendText($"  Фамилия: {item.Surname}\r\n");
                         OutTextValue.AppendText($"  Имя: {item.Name}\r\n");
                         OutTextValue.AppendText($"  Отчество: {item.Patronymic}\r\n");
@@ -145,11 +163,11 @@ namespace OOP_Lab2
                         OutTextValue.AppendText($"  Стаж(лет): {item.Experience}\r\n");
                     }
                     OutTextValue.AppendText(" Производитель\r\n");
-                    OutTextValue.AppendText($"  Название: {AirportItem.AirplaneManufacturer.Name}\r\n");
-                    OutTextValue.AppendText($"  Страна: {AirportItem.AirplaneManufacturer.Country}\r\n");
-                    OutTextValue.AppendText($"  Год основания: {AirportItem.AirplaneManufacturer.YearOfFoundation}\r\n");
+                    OutTextValue.AppendText($"  Название: {AirportItem.technicalCharacteristics.AirplaneManufacturer.Name}\r\n");
+                    OutTextValue.AppendText($"  Страна: {AirportItem.technicalCharacteristics.AirplaneManufacturer.Country}\r\n");
+                    OutTextValue.AppendText($"  Год основания: {AirportItem.technicalCharacteristics.AirplaneManufacturer.YearOfFoundation}\r\n");
                     OutTextValue.AppendText($"  Типы производимых самолетов: \r\n");
-                    foreach (string el in AirportItem.AirplaneManufacturer.TypesOfAircraft)
+                    foreach (string el in AirportItem.technicalCharacteristics.AirplaneManufacturer.TypesOfAircraft)
                         OutTextValue.AppendText($"   {el}\r\n");
                 }
             }
@@ -175,7 +193,6 @@ namespace OOP_Lab2
         private void Push_Info_button_Click(object sender, EventArgs e)
         {
             airport.Add(airplane);
-            airplane = new Airplane();
             NumberValue.ResetText();
             TypeRadioButton1.Checked = false;
             TypeRadioButton2.Checked = false;
@@ -209,5 +226,6 @@ namespace OOP_Lab2
                 }
         }
         #endregion
+
     }
 }

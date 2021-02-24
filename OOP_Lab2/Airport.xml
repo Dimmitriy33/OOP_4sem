@@ -1,67 +1,17 @@
 <?xml version="1.0"?>
 <ArrayOfAirplane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Airplane>
-    <id xmlns="Airport">1</id>
+    <id xmlns="Airport">11</id>
     <type xmlns="Airport">пассажирский</type>
-    <model xmlns="Airport">Ni-2</model>
-    <crewmembers xmlns="Airport">
-      <cewmember>
-        <Surname>Shalunov</Surname>
-        <Name>Dmitriy</Name>
-        <Patronymic>Leonidovich</Patronymic>
-        <Position>Пилот</Position>
-        <Age>20</Age>
-        <Experience>2</Experience>
-      </cewmember>
-      <cewmember>
-        <Surname>Tehanov</Surname>
-        <Name>Andrew</Name>
-        <Patronymic>XZ</Patronymic>
-        <Position>Стюардесса</Position>
-        <Age>22</Age>
-        <Experience>6</Experience>
-      </cewmember>
-    </crewmembers>
-    <numberofpassenges xmlns="Airport">100</numberofpassenges>
-    <yearofissue xmlns="Airport">2000</yearofissue>
-    <carrying xmlns="Airport">2000</carrying>
-    <Date xmlns="Airport">2021-02-02</Date>
+    <model xmlns="Airport">ss</model>
+    <crewmembers xmlns="Airport" />
+    <numberofpassenges xmlns="Airport">3</numberofpassenges>
+    <yearofissue xmlns="Airport">1902</yearofissue>
+    <carrying xmlns="Airport">1002</carrying>
+    <Date xmlns="Airport">0001-01-01</Date>
     <manufacturer xmlns="Airport">
-      <Name>Bitchobnya</Name>
-      <Country>Belarus</Country>
-      <YearOfFoundation>1994</YearOfFoundation>
-      <TypesOfAircraft>
-        <string>поршневые</string>
-        <string>турбовинтовые</string>
-      </TypesOfAircraft>
-    </manufacturer>
-  </Airplane>
-  <Airplane>
-    <id xmlns="Airport">2</id>
-    <type xmlns="Airport">грузовой</type>
-    <model xmlns="Airport">w-2</model>
-    <crewmembers xmlns="Airport">
-      <cewmember>
-        <Surname>Gorshok</Surname>
-        <Name>Misha</Name>
-        <Patronymic>xxx</Patronymic>
-        <Position>Стюардесса</Position>
-        <Age>20</Age>
-        <Experience>4</Experience>
-      </cewmember>
-    </crewmembers>
-    <numberofpassenges xmlns="Airport">119</numberofpassenges>
-    <yearofissue xmlns="Airport">2006</yearofissue>
-    <carrying xmlns="Airport">2013</carrying>
-    <Date xmlns="Airport">2021-02-11</Date>
-    <manufacturer xmlns="Airport">
-      <Name>Tuutu</Name>
-      <Country>China</Country>
-      <YearOfFoundation>2000</YearOfFoundation>
-      <TypesOfAircraft>
-        <string>турбовинтовые</string>
-        <string>турбореактивные</string>
-      </TypesOfAircraft>
+      <YearOfFoundation>0</YearOfFoundation>
+      <TypesOfAircraft />
     </manufacturer>
   </Airplane>
 </ArrayOfAirplane>

@@ -63,7 +63,7 @@ namespace OOP_Lab2
             // Number
             // 
             this.Number.AutoSize = true;
-            this.Number.Location = new System.Drawing.Point(7, 43);
+            this.Number.Location = new System.Drawing.Point(7, 183);
             this.Number.Name = "Number";
             this.Number.Size = new System.Drawing.Size(118, 17);
             this.Number.TabIndex = 0;
@@ -71,7 +71,7 @@ namespace OOP_Lab2
             // 
             // NumberValue
             // 
-            this.NumberValue.Location = new System.Drawing.Point(10, 63);
+            this.NumberValue.Location = new System.Drawing.Point(10, 203);
             this.NumberValue.Name = "NumberValue";
             this.NumberValue.Size = new System.Drawing.Size(110, 22);
             this.NumberValue.TabIndex = 1;
@@ -114,7 +114,7 @@ namespace OOP_Lab2
             // TypeRadioButton3
             // 
             this.TypeRadioButton3.AutoSize = true;
-            this.TypeRadioButton3.Location = new System.Drawing.Point(7, 201);
+            this.TypeRadioButton3.Location = new System.Drawing.Point(6, 88);
             this.TypeRadioButton3.Name = "TypeRadioButton3";
             this.TypeRadioButton3.Size = new System.Drawing.Size(86, 21);
             this.TypeRadioButton3.TabIndex = 5;
@@ -298,7 +298,8 @@ namespace OOP_Lab2
             this.groupType.Controls.Add(this.TypeRadioButton2);
             this.groupType.Controls.Add(this.TypeRadioButton1);
             this.groupType.Controls.Add(this.Type);
-            this.groupType.Location = new System.Drawing.Point(1, 111);
+            this.groupType.Controls.Add(this.TypeRadioButton3);
+            this.groupType.Location = new System.Drawing.Point(12, 43);
             this.groupType.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.groupType.Name = "groupType";
             this.groupType.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -353,7 +354,6 @@ namespace OOP_Lab2
             this.Controls.Add(this.OutText);
             this.Controls.Add(this.OutTextValue);
             this.Controls.Add(this.ShowInfoAboutAirplanes_Button);
-            this.Controls.Add(this.TypeRadioButton3);
             this.Controls.Add(this.groupType);
             this.Controls.Add(this.Push_Info_button);
             this.Controls.Add(this.dateTimePicker1);
@@ -372,6 +372,7 @@ namespace OOP_Lab2
             this.Controls.Add(this.NumberValue);
             this.Controls.Add(this.Number);
             this.Name = "AirplaneInfo";
+            this.Load += new System.EventHandler(this.AirplaneInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).EndInit();
