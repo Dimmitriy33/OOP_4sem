@@ -1,21 +1,30 @@
-﻿using System;
+﻿using OOP_Lab2.AbstractFactory;
+using System;
+using System.Xml.Serialization;
 
 namespace OOP_Lab2
 {
+
     [Serializable]
-    public class Airplane
+    [XmlInclude(typeof(CargoAirplaneFactory))]
+    [XmlInclude(typeof(MilitaryAirplaneFactory))]
+    [XmlInclude(typeof(PassangerAirplaneFactory))]
+    public abstract class Airplane
     {
-        public IBaseInfo baseInfo { get; set; }
-        public ITechnicalCharacteristics technicalCharacteristics { get; set; }
+        public BaseInfo baseInfo { get; set; }
+        public TechnicalCharacteristics technicalCharacteristics { get; set; }
         public Airplane()
         {
-
+            baseInfo = new BaseInfo();
+            technicalCharacteristics = new TechnicalCharacteristics();
         }
 
-        public Airplane(IAirplaneFactory airplaneFactory)
+        public Airplane(BaseInfo baseInfo, TechnicalCharacteristics technicalCharacteristics)
         {
-            baseInfo = airplaneFactory.CreateBaseInfo();
-            technicalCharacteristics = airplaneFactory.CreateTechnicalCharacteristics();
+            this.baseInfo = baseInfo;
+            this.technicalCharacteristics = technicalCharacteristics;
         }
+
+        public abstract string PrintInfoAboutClass();
     }
 }

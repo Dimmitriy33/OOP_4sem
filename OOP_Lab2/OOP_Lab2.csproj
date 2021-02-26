@@ -64,8 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplane.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\elements\MilitaryAirplane.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplane.cs" />
+    <Compile Include="AbstractFactory\BaseInfo.cs" />
+    <Compile Include="AbstractFactory\TechnicalCharacteristics.cs" />
     <Compile Include="Airplane.cs" />
-    <Compile Include="AbstractFactory\AirplaneFactory\BaseInfoFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\CargoAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneTechnicalCharacteristics.cs" />
@@ -102,7 +106,6 @@
     <Compile Include="SingletonAirport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AbstractFactory\AirplaneFactory\TechnicalCharacteristicsFactory.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

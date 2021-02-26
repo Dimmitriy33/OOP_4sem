@@ -1,8 +1,10 @@
-﻿namespace OOP_Lab2
+﻿using OOP_Lab2.AbstractFactory;
+
+namespace OOP_Lab2
 {
-    public interface IAirplaneFactory
+    public abstract class IAirplaneFactory
     {
-        IBaseInfo CreateBaseInfo();
-        ITechnicalCharacteristics CreateTechnicalCharacteristics();
+        public abstract Airplane CreateAirplane();
+        public abstract Airplane CreateAirplane(BaseInfo baseinfo, TechnicalCharacteristics technicalCharacteristics);
     }
 }

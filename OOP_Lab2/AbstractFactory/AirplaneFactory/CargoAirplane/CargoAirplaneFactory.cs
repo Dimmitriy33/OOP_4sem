@@ -1,21 +1,18 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using OOP_Lab2.AbstractFactory;
+using OOP_Lab2.AbstractFactory.AirplaneFactory.CargoAirplane.elements;
 
 namespace OOP_Lab2
 {
-    [Serializable]
-    [XmlRoot(Namespace = "Airport")]
-    [XmlType("Airplane")]
     public class CargoAirplaneFactory : IAirplaneFactory
     {
-        public IBaseInfo CreateBaseInfo()
+        public override Airplane CreateAirplane(BaseInfo baseinfo, TechnicalCharacteristics technicalCharacteristics)
         {
-            return new CargoAirplaneBaseInfo();
+            return new CargoAirplane(baseinfo, technicalCharacteristics);
         }
 
-        public ITechnicalCharacteristics CreateTechnicalCharacteristics()
+        public override Airplane CreateAirplane()
         {
-            return new CargoAirplaneTechnicalCharacteristics();
+            return new CargoAirplane();
         }
     }
 }

@@ -1,26 +1,14 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using OOP_Lab2.AbstractFactory;
+using System;
 
 namespace OOP_Lab2
 {
     [Serializable]
-    public class CargoAirplaneTechnicalCharacteristics : ITechnicalCharacteristics
+    public class CargoAirplaneTechnicalCharacteristics : TechnicalCharacteristics
     {
-        private int carrying;
-        private AirplaneManufacturer manufacturer = new AirplaneManufacturer();
-
-        [XmlElement(ElementName = "carrying")]
-        public int Carrying
+        public CargoAirplaneTechnicalCharacteristics()
         {
-            get => carrying;
-            set => carrying = value;
-        }
 
-        [XmlElement(ElementName = "manufacturer")]
-        public AirplaneManufacturer AirplaneManufacturer
-        {
-            get => manufacturer;
-            set => manufacturer = value;
         }
     }
 }

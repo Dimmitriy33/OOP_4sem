@@ -71,19 +71,19 @@ namespace OOP_Lab2
             if (TypeRadioButton1.Checked)
             {
                 factory = new PassangerAirplaneFactory();
-                airplane = new Airplane(factory);
+                airplane = factory.CreateAirplane();
                 airplane.baseInfo.Type = TypeRadioButton1.Text;
             }
             else if (TypeRadioButton2.Checked)
             {
                 factory = new CargoAirplaneFactory();
-                airplane = new Airplane(factory);
+                airplane = factory.CreateAirplane();
                 airplane.baseInfo.Type = TypeRadioButton2.Text;
             }
-            else if (TypeRadioButton1.Checked)
+            else if (TypeRadioButton3.Checked)
             {
                 factory = new MilitaryAirplaneFactory();
-                airplane = new Airplane(factory);
+                airplane = factory.CreateAirplane();
                 airplane.baseInfo.Type = TypeRadioButton3.Text;
             }
         }
