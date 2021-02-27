@@ -1,4 +1,7 @@
 ﻿using OOP_Lab2.AbstractFactory;
+using OOP_Lab2.AbstractFactory.AirplaneFactory.CargoAirplane.elements;
+using OOP_Lab2.AbstractFactory.AirplaneFactory.MilitaryAirplane.elements;
+using OOP_Lab2.AbstractFactory.AirplaneFactory.PassangerAirplane.elements;
 using System;
 using System.Xml.Serialization;
 
@@ -6,9 +9,9 @@ namespace OOP_Lab2
 {
 
     [Serializable]
-    [XmlInclude(typeof(CargoAirplaneFactory))]
-    [XmlInclude(typeof(MilitaryAirplaneFactory))]
-    [XmlInclude(typeof(PassangerAirplaneFactory))]
+    [XmlInclude(typeof(CargoAirplane))]
+    [XmlInclude(typeof(MilitaryAirplane))]
+    [XmlInclude(typeof(PassangerAirplane))]
     public abstract class Airplane
     {
         public BaseInfo baseInfo { get; set; }

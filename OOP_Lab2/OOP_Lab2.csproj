@@ -67,9 +67,9 @@
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplane.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\elements\MilitaryAirplane.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplane.cs" />
-    <Compile Include="AbstractFactory\BaseInfo.cs" />
-    <Compile Include="AbstractFactory\TechnicalCharacteristics.cs" />
-    <Compile Include="Airplane.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\BaseInfo.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\TechnicalCharacteristics.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Airplane.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\CargoAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneTechnicalCharacteristics.cs" />
@@ -93,9 +93,9 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="AirPlaneManufacturer.cs" />
-    <Compile Include="AbstractFactory\AirplaneFactory\IAirplaneFactory.cs" />
-    <Compile Include="AbstractFactory\AirplaneFactory\IBaseInfo.cs" />
-    <Compile Include="AbstractFactory\AirplaneFactory\ITechnicalCharacteristics.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\IAirplaneFactory.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\IBaseInfo.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\ITechnicalCharacteristics.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\elements\MilitaryAirplaneBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\MilitaryAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\MilitaryAirplane\elements\MilitaryAirplaneTechnicalCharacteristics.cs" />

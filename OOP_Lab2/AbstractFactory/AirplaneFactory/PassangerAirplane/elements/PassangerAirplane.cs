@@ -1,5 +1,8 @@
-﻿namespace OOP_Lab2.AbstractFactory.AirplaneFactory.PassangerAirplane.elements
+﻿using System;
+
+namespace OOP_Lab2.AbstractFactory.AirplaneFactory.PassangerAirplane.elements
 {
+    [Serializable]
     public class PassangerAirplane : Airplane
     {
         public PassangerAirplane()

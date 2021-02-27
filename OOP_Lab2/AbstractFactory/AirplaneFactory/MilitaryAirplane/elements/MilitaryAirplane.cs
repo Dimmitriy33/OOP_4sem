@@ -1,6 +1,9 @@
-﻿namespace OOP_Lab2.AbstractFactory.AirplaneFactory.MilitaryAirplane.elements
+﻿using System;
+
+namespace OOP_Lab2.AbstractFactory.AirplaneFactory.MilitaryAirplane.elements
 {
-    class MilitaryAirplane : Airplane
+    [Serializable]
+    public class MilitaryAirplane : Airplane
     {
         public MilitaryAirplane()
         {
