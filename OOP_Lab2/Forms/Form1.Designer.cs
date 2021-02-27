@@ -54,6 +54,7 @@ namespace OOP_Lab2
             this.OutTextValue = new System.Windows.Forms.TextBox();
             this.OutText = new System.Windows.Forms.Label();
             this.WriteInfoAboutAirplanes_Button = new System.Windows.Forms.Button();
+            this.CreateAirportInfrastructure = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CarryingValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YearOfIssueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfPassengersValue)).BeginInit();
@@ -152,7 +153,7 @@ namespace OOP_Lab2
             // 
             // CarryingValue
             // 
-            this.CarryingValue.Location = new System.Drawing.Point(175, 171);
+            this.CarryingValue.Location = new System.Drawing.Point(160, 209);
             this.CarryingValue.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -176,7 +177,7 @@ namespace OOP_Lab2
             // Carrying
             // 
             this.Carrying.AutoSize = true;
-            this.Carrying.Location = new System.Drawing.Point(172, 151);
+            this.Carrying.Location = new System.Drawing.Point(157, 189);
             this.Carrying.Name = "Carrying";
             this.Carrying.Size = new System.Drawing.Size(133, 17);
             this.Carrying.TabIndex = 28;
@@ -184,7 +185,7 @@ namespace OOP_Lab2
             // 
             // YearOfIssueValue
             // 
-            this.YearOfIssueValue.Location = new System.Drawing.Point(175, 117);
+            this.YearOfIssueValue.Location = new System.Drawing.Point(160, 155);
             this.YearOfIssueValue.Maximum = new decimal(new int[] {
             2021,
             0,
@@ -208,7 +209,7 @@ namespace OOP_Lab2
             // YearOfIssue
             // 
             this.YearOfIssue.AutoSize = true;
-            this.YearOfIssue.Location = new System.Drawing.Point(172, 97);
+            this.YearOfIssue.Location = new System.Drawing.Point(157, 135);
             this.YearOfIssue.Name = "YearOfIssue";
             this.YearOfIssue.Size = new System.Drawing.Size(90, 17);
             this.YearOfIssue.TabIndex = 26;
@@ -216,7 +217,7 @@ namespace OOP_Lab2
             // 
             // NumberOfPassengersValue
             // 
-            this.NumberOfPassengersValue.Location = new System.Drawing.Point(175, 63);
+            this.NumberOfPassengersValue.Location = new System.Drawing.Point(160, 101);
             this.NumberOfPassengersValue.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -235,7 +236,7 @@ namespace OOP_Lab2
             // NumberOfPassengers
             // 
             this.NumberOfPassengers.AutoSize = true;
-            this.NumberOfPassengers.Location = new System.Drawing.Point(172, 43);
+            this.NumberOfPassengers.Location = new System.Drawing.Point(157, 81);
             this.NumberOfPassengers.Name = "NumberOfPassengers";
             this.NumberOfPassengers.Size = new System.Drawing.Size(216, 17);
             this.NumberOfPassengers.TabIndex = 24;
@@ -347,9 +348,21 @@ namespace OOP_Lab2
             this.WriteInfoAboutAirplanes_Button.UseVisualStyleBackColor = false;
             this.WriteInfoAboutAirplanes_Button.Click += new System.EventHandler(this.WriteInfoAboutAirplanes_Button_Click);
             // 
+            // CreateAirportInfrastructure
+            // 
+            this.CreateAirportInfrastructure.BackColor = System.Drawing.Color.DarkSalmon;
+            this.CreateAirportInfrastructure.Location = new System.Drawing.Point(150, 4);
+            this.CreateAirportInfrastructure.Name = "CreateAirportInfrastructure";
+            this.CreateAirportInfrastructure.Size = new System.Drawing.Size(191, 56);
+            this.CreateAirportInfrastructure.TabIndex = 42;
+            this.CreateAirportInfrastructure.Text = "Создать инфраструктуру аэропорта";
+            this.CreateAirportInfrastructure.UseVisualStyleBackColor = false;
+            this.CreateAirportInfrastructure.Click += new System.EventHandler(this.CreateAirportInfrastructure_Click);
+            // 
             // AirplaneInfo
             // 
             this.ClientSize = new System.Drawing.Size(988, 471);
+            this.Controls.Add(this.CreateAirportInfrastructure);
             this.Controls.Add(this.WriteInfoAboutAirplanes_Button);
             this.Controls.Add(this.OutText);
             this.Controls.Add(this.OutTextValue);
@@ -413,6 +426,7 @@ namespace OOP_Lab2
         private System.Windows.Forms.TextBox OutTextValue;
         private System.Windows.Forms.Label OutText;
         private System.Windows.Forms.Button WriteInfoAboutAirplanes_Button;
+        private System.Windows.Forms.Button CreateAirportInfrastructure;
     }
 }
 

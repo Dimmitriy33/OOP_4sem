@@ -10,7 +10,12 @@ namespace OOP_Lab2
     public delegate void AddToAirport2(AirplaneManufacturer manufacturer);
     public partial class AirplaneInfo : Form
     {
-        List<Airplane> airport = new List<Airplane>();
+        static AirportInfastructureBuilder airportInfastructureBuilder = new MinskAirportInfastructureBuilder();
+        Creator creator = new Creator(airportInfastructureBuilder);
+        AirportInfastructureProduct AirportInfrastructure = airportInfastructureBuilder.getAirportInfrastructure();
+
+        /*List<Airplane> airport = new List<Airplane>();*/
+
         private IAirplaneFactory factory;
         Airplane airplane;
 
@@ -20,7 +25,7 @@ namespace OOP_Lab2
             InitializeComponent();
             try
             {
-                airport.Clear();
+                AirportInfrastructure.Airport.Clear();
             }
             catch
             {
@@ -180,7 +185,7 @@ namespace OOP_Lab2
                 XmlSerializer formatter = new XmlSerializer(typeof(List<Airplane>));
                 using (FileStream file = new FileStream("..\\..\\Airport.xml", FileMode.OpenOrCreate))
                 {
-                    formatter.Serialize(file, airport);
+                    formatter.Serialize(file, AirportInfrastructure.Airport);
                 }
             }
             catch (Exception)
@@ -191,7 +196,7 @@ namespace OOP_Lab2
 
         private void Push_Info_button_Click(object sender, EventArgs e)
         {
-            airport.Add(airplane);
+            AirportInfrastructure.Airport.Add(airplane);
             NumberValue.ResetText();
             TypeRadioButton1.Checked = false;
             TypeRadioButton2.Checked = false;
@@ -226,5 +231,9 @@ namespace OOP_Lab2
         }
         #endregion
 
+        private void CreateAirportInfrastructure_Click(object sender, EventArgs e)
+        {
+            creator.Create(new List<Airplane>());
+        }
     }
 }

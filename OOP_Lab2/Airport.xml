@@ -2,61 +2,30 @@
 <ArrayOfAirplane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Airplane xsi:type="PassangerAirplane">
     <baseInfo>
-      <id>1112</id>
+      <id>11</id>
       <type>пассажирский</type>
       <model />
       <crewmembers>
         <cewmember>
-          <Surname>q</Surname>
-          <Name>q</Name>
-          <Patronymic>q</Patronymic>
-          <Position>Второй пилот</Position>
+          <Surname>aa</Surname>
+          <Name>aa</Name>
+          <Patronymic>aa</Patronymic>
           <Age>19</Age>
           <Experience>1</Experience>
         </cewmember>
       </crewmembers>
-      <numberofpassenges>0</numberofpassenges>
-      <yearofissue>0</yearofissue>
+      <numberofpassenges>2</numberofpassenges>
+      <yearofissue>1901</yearofissue>
       <Date>2021-02-27</Date>
     </baseInfo>
     <technicalCharacteristics>
-      <Carrying>0</Carrying>
+      <Carrying>1001</Carrying>
       <AirplaneManufacturer>
-        <Name>q</Name>
-        <Country>q</Country>
+        <Name>a</Name>
+        <Country>a</Country>
         <YearOfFoundation>1901</YearOfFoundation>
         <TypesOfAircraft>
           <string>турбовинтовые</string>
-        </TypesOfAircraft>
-      </AirplaneManufacturer>
-    </technicalCharacteristics>
-  </Airplane>
-  <Airplane xsi:type="CargoAirplane">
-    <baseInfo>
-      <id>12</id>
-      <type>грузовой</type>
-      <model />
-      <crewmembers>
-        <cewmember>
-          <Surname>s</Surname>
-          <Name>s</Name>
-          <Patronymic>s</Patronymic>
-          <Age>0</Age>
-          <Experience>1</Experience>
-        </cewmember>
-      </crewmembers>
-      <numberofpassenges>3</numberofpassenges>
-      <yearofissue>1902</yearofissue>
-      <Date>2021-02-27</Date>
-    </baseInfo>
-    <technicalCharacteristics>
-      <Carrying>1002</Carrying>
-      <AirplaneManufacturer>
-        <Name>qq</Name>
-        <Country>qq</Country>
-        <YearOfFoundation>1901</YearOfFoundation>
-        <TypesOfAircraft>
-          <string>поршневые</string>
         </TypesOfAircraft>
       </AirplaneManufacturer>
     </technicalCharacteristics>

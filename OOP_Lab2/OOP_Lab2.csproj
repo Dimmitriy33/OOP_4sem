@@ -73,7 +73,10 @@
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\CargoAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\CargoAirplane\elements\CargoAirplaneTechnicalCharacteristics.cs" />
-    <Compile Include="CrewMember.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\ElementsClasses\CrewMember.cs" />
+    <Compile Include="AirportInfrastructureBuilder\AirportInfastructureBuilder.cs" />
+    <Compile Include="AirportInfrastructureBuilder\Products\AirportInfastructureProduct.cs" />
+    <Compile Include="AirportInfrastructureBuilder\Creator\Creator.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,7 +95,7 @@
     <Compile Include="Forms\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="AirPlaneManufacturer.cs" />
+    <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\ElementsClasses\AirPlaneManufacturer.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\Airplane\IAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\IBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\Airplane\Info\ITechnicalCharacteristics.cs" />
@@ -102,8 +105,10 @@
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplaneBaseInfo.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\PassangerAirplaneFactory.cs" />
     <Compile Include="AbstractFactory\AirplaneFactory\PassangerAirplane\elements\PassangerAirplaneTechnicalCharacteristics.cs" />
+    <Compile Include="AirportInfrastructureBuilder\MinskAirportInfastructureBuilder.cs" />
+    <Compile Include="AirportInfrastructureBuilder\Products\parts\Parking.cs" />
+    <Compile Include="AirportInfrastructureBuilder\Products\parts\Shop.cs" />
     <Compile Include="UserSettings.cs" />
-    <Compile Include="SingletonAirport.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
