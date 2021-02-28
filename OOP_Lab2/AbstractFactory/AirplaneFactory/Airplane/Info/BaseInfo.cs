@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 
 namespace OOP_Lab2.AbstractFactory
 {
+    [Serializable]
     public class BaseInfo : IBaseInfo
     {
         private int id;

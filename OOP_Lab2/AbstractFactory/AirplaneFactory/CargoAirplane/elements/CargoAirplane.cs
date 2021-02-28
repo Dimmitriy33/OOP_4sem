@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP_Lab2.Prototype;
+using System;
 
 namespace OOP_Lab2.AbstractFactory.AirplaneFactory.CargoAirplane.elements
 {
@@ -10,11 +11,17 @@ namespace OOP_Lab2.AbstractFactory.AirplaneFactory.CargoAirplane.elements
 
         }
         public CargoAirplane(BaseInfo baseInfo, TechnicalCharacteristics technicalCharacteristics)
-            : base(baseInfo, technicalCharacteristics) { }
+            : base(baseInfo, technicalCharacteristics) { baseInfo.Type = "грузовой"; }
 
         public override string PrintInfoAboutClass()
         {
             return "<--- This is CargoAirplane --> \r\n";
         }
+
+        public new IPrototype deepClone()
+        {
+            return new CargoAirplane(base.baseInfo, base.technicalCharacteristics) as IPrototype;
+        }
+
     }
 }

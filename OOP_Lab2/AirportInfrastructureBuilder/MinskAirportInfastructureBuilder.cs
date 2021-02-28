@@ -20,9 +20,19 @@ namespace OOP_Lab2
             airportInfastructureProduct.setParking = new Parking(120);
         }
 
+        public override void createParking(Parking parking)
+        {
+            airportInfastructureProduct.setParking = parking;
+        }
+
         public override void createShop()
         {
             airportInfastructureProduct.setShop = new Shop();
+        }
+
+        public override void createShop(Shop shop)
+        {
+            airportInfastructureProduct.setShop = shop;
         }
 
         public override AirportInfastructureProduct getAirportInfrastructure()

@@ -108,6 +108,7 @@
     <Compile Include="AirportInfrastructureBuilder\MinskAirportInfastructureBuilder.cs" />
     <Compile Include="AirportInfrastructureBuilder\Products\parts\Parking.cs" />
     <Compile Include="AirportInfrastructureBuilder\Products\parts\Shop.cs" />
+    <Compile Include="Prototype\IPrototype.cs" />
     <Compile Include="UserSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

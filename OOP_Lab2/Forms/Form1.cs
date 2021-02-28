@@ -4,6 +4,10 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
+//Model ---
+//reset.text збрасывает занесенное значение
+//baseinfo.type в классах самолетов
+
 namespace OOP_Lab2
 {
     public delegate void AddToAirport1(List<CrewMember> members);
@@ -75,21 +79,24 @@ namespace OOP_Lab2
         {
             if (TypeRadioButton1.Checked)
             {
+                creator.Create(new List<Airplane>());
                 factory = new PassangerAirplaneFactory();
                 airplane = factory.CreateAirplane();
-                airplane.baseInfo.Type = TypeRadioButton1.Text;
+                /*airplane.baseInfo.Type = TypeRadioButton1.Text;// т.к. указываю в классе PassangerAirplane*/
             }
             else if (TypeRadioButton2.Checked)
             {
+                creator.Create(new List<Airplane>());
                 factory = new CargoAirplaneFactory();
                 airplane = factory.CreateAirplane();
-                airplane.baseInfo.Type = TypeRadioButton2.Text;
+                /*airplane.baseInfo.Type = TypeRadioButton2.Text;*/
             }
             else if (TypeRadioButton3.Checked)
             {
+                creator.Create(new List<Airplane>());
                 factory = new MilitaryAirplaneFactory();
                 airplane = factory.CreateAirplane();
-                airplane.baseInfo.Type = TypeRadioButton3.Text;
+                /*airplane.baseInfo.Type = TypeRadioButton3.Text;*/
             }
         }
 
@@ -230,10 +237,5 @@ namespace OOP_Lab2
                 }
         }
         #endregion
-
-        private void CreateAirportInfrastructure_Click(object sender, EventArgs e)
-        {
-            creator.Create(new List<Airplane>());
-        }
     }
 }
