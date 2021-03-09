@@ -11,7 +11,7 @@ namespace OOP_Lab2.AbstractFactory.AirplaneFactory.MilitaryAirplane.elements
 
         }
         public MilitaryAirplane(BaseInfo baseInfo, TechnicalCharacteristics technicalCharacteristics)
-            : base(baseInfo, technicalCharacteristics) { baseInfo.Type = "военный"; }
+            : base(baseInfo, technicalCharacteristics) { this.baseInfo.Type = "военный"; }
 
 
         public override string PrintInfoAboutClass()
@@ -23,5 +23,6 @@ namespace OOP_Lab2.AbstractFactory.AirplaneFactory.MilitaryAirplane.elements
         {
             return new MilitaryAirplane(base.baseInfo, base.technicalCharacteristics) as IPrototype;
         }
+
     }
 }

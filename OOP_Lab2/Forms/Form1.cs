@@ -1,12 +1,11 @@
-﻿using System;
+﻿using OOP_Lab2.Decorator;
+using OOP_Lab2.Decorator.ConcreteDecorators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-//Model ---
-//reset.text збрасывает занесенное значение
-//baseinfo.type в классах самолетов
 
 namespace OOP_Lab2
 {
@@ -82,6 +81,7 @@ namespace OOP_Lab2
                 creator.Create(new List<Airplane>());
                 factory = new PassangerAirplaneFactory();
                 airplane = factory.CreateAirplane();
+                airplane = new PassangersDecorator(airplane);
                 /*airplane.baseInfo.Type = TypeRadioButton1.Text;// т.к. указываю в классе PassangerAirplane*/
             }
             else if (TypeRadioButton2.Checked)
@@ -89,6 +89,7 @@ namespace OOP_Lab2
                 creator.Create(new List<Airplane>());
                 factory = new CargoAirplaneFactory();
                 airplane = factory.CreateAirplane();
+                airplane = new CargoDecorator(airplane);
                 /*airplane.baseInfo.Type = TypeRadioButton2.Text;*/
             }
             else if (TypeRadioButton3.Checked)
@@ -96,13 +97,14 @@ namespace OOP_Lab2
                 creator.Create(new List<Airplane>());
                 factory = new MilitaryAirplaneFactory();
                 airplane = factory.CreateAirplane();
+                airplane = new MilitaryDecorator(airplane);
                 /*airplane.baseInfo.Type = TypeRadioButton3.Text;*/
             }
         }
 
         private void ModelValue_TextChanged(object sender, EventArgs e)
         {
-            airplane.baseInfo.Model = ModelValue.Text;
+            this.airplane.baseInfo.Model = ModelValue.Text;
         }
 
         private void NumberOfPassengersValue_ValueChanged(object sender, EventArgs e)

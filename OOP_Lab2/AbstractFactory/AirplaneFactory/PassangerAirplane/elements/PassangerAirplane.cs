@@ -12,7 +12,7 @@ namespace OOP_Lab2.AbstractFactory.AirplaneFactory.PassangerAirplane.elements
         }
 
         public PassangerAirplane(BaseInfo baseInfo, TechnicalCharacteristics technicalCharacteristics)
-            : base(baseInfo, technicalCharacteristics) { baseInfo.Type = "пассажирский"; }
+            : base(baseInfo, technicalCharacteristics) { this.baseInfo.Type = "пассажирский"; }
 
         public override string PrintInfoAboutClass()
         {
@@ -23,5 +23,6 @@ namespace OOP_Lab2.AbstractFactory.AirplaneFactory.PassangerAirplane.elements
         {
             return new PassangerAirplane(base.baseInfo, base.technicalCharacteristics) as IPrototype;
         }
+
     }
 }

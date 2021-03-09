@@ -11,7 +11,7 @@ namespace OOP_Lab2.AbstractFactory.AirplaneFactory.CargoAirplane.elements
 
         }
         public CargoAirplane(BaseInfo baseInfo, TechnicalCharacteristics technicalCharacteristics)
-            : base(baseInfo, technicalCharacteristics) { baseInfo.Type = "грузовой"; }
+            : base(baseInfo, technicalCharacteristics) { this.baseInfo.Type = "грузовой"; }
 
         public override string PrintInfoAboutClass()
         {

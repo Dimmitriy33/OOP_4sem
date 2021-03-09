@@ -2,6 +2,8 @@
 using OOP_Lab2.AbstractFactory.AirplaneFactory.CargoAirplane.elements;
 using OOP_Lab2.AbstractFactory.AirplaneFactory.MilitaryAirplane.elements;
 using OOP_Lab2.AbstractFactory.AirplaneFactory.PassangerAirplane.elements;
+using OOP_Lab2.Decorator;
+using OOP_Lab2.Decorator.ConcreteDecorators;
 using OOP_Lab2.Prototype;
 using System;
 using System.Xml.Serialization;
@@ -13,6 +15,10 @@ namespace OOP_Lab2
     [XmlInclude(typeof(CargoAirplane))]
     [XmlInclude(typeof(MilitaryAirplane))]
     [XmlInclude(typeof(PassangerAirplane))]
+    [XmlInclude(typeof(CargoDecorator))]
+    [XmlInclude(typeof(MilitaryDecorator))]
+    [XmlInclude(typeof(PassangersDecorator))]
+
     public abstract class Airplane : IPrototype
     {
 

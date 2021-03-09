@@ -77,6 +77,12 @@
     <Compile Include="AirportInfrastructureBuilder\AirportInfastructureBuilder.cs" />
     <Compile Include="AirportInfrastructureBuilder\Products\AirportInfastructureProduct.cs" />
     <Compile Include="AirportInfrastructureBuilder\Creator\Creator.cs" />
+    <Compile Include="Decorator\AirplaneAdditionalInfo.cs" />
+    <Compile Include="Decorator\AirplaneDecorator.cs" />
+    <Compile Include="Decorator\ConcreteDecorators\CargoDecorator.cs" />
+    <Compile Include="Decorator\ConcreteDecorators\MilitaryDecorator.cs" />
+    <Compile Include="Decorator\ConcreteDecorators\PassangersDecorator.cs" />
+    <Compile Include="Decorator\IAdditionalInfo.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
