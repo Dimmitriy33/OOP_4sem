@@ -2,26 +2,26 @@
 <ArrayOfAirplane xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Airplane xsi:type="CargoDecorator">
     <baseInfo>
-      <id>11</id>
+      <id>12</id>
       <model />
       <crewmembers>
         <cewmember>
-          <Surname>s</Surname>
-          <Name>s</Name>
-          <Patronymic>s</Patronymic>
+          <Surname>a</Surname>
+          <Name>a</Name>
+          <Patronymic>a</Patronymic>
           <Age>0</Age>
           <Experience>1</Experience>
         </cewmember>
       </crewmembers>
-      <numberofpassenges>0</numberofpassenges>
-      <yearofissue>0</yearofissue>
-      <Date>2021-03-06</Date>
+      <numberofpassenges>2</numberofpassenges>
+      <yearofissue>1901</yearofissue>
+      <Date>2021-03-10</Date>
     </baseInfo>
     <technicalCharacteristics>
-      <Carrying>0</Carrying>
+      <Carrying>1001</Carrying>
       <Manufacturer>
-        <Name>s</Name>
-        <Country>s</Country>
+        <Name>a</Name>
+        <Country>a</Country>
         <YearOfFoundation>0</YearOfFoundation>
         <TypesOfAircraft>
           <string>с ракетными двигателями</string>

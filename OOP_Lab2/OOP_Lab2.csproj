@@ -114,6 +114,9 @@
     <Compile Include="AirportInfrastructureBuilder\MinskAirportInfastructureBuilder.cs" />
     <Compile Include="AirportInfrastructureBuilder\Products\parts\Parking.cs" />
     <Compile Include="AirportInfrastructureBuilder\Products\parts\Shop.cs" />
+    <Compile Include="Observer\IObservable.cs" />
+    <Compile Include="Observer\IObserver.cs" />
+    <Compile Include="Observer\AirplaneObserver.cs" />
     <Compile Include="Prototype\IPrototype.cs" />
     <Compile Include="UserSettings.cs" />
     <Compile Include="Program.cs" />

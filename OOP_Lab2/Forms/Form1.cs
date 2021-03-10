@@ -1,5 +1,6 @@
 ﻿using OOP_Lab2.Decorator;
 using OOP_Lab2.Decorator.ConcreteDecorators;
+using OOP_Lab2.Observer;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,9 @@ namespace OOP_Lab2
         Creator creator = new Creator(airportInfastructureBuilder);
         AirportInfastructureProduct AirportInfrastructure = airportInfastructureBuilder.getAirportInfrastructure();
 
+        //! OBSERVER
+        IObserver airplaneObserver = new AirplaneObserver();
+
         /*List<Airplane> airport = new List<Airplane>();*/
 
         private IAirplaneFactory factory;
@@ -29,6 +33,9 @@ namespace OOP_Lab2
             try
             {
                 AirportInfrastructure.Airport.Clear();
+
+                //! REGISTER
+                AirportInfrastructure.RegisterObserver(airplaneObserver);
             }
             catch
             {
@@ -184,6 +191,9 @@ namespace OOP_Lab2
                         OutTextValue.AppendText($"   {el}\r\n");
                 }
             }
+
+            //! REMOVE
+            AirportInfrastructure.RemoveObserver(airplaneObserver);
         }
         private void WriteInfoAboutAirplanes_Button_Click(object sender, EventArgs e)
         {
@@ -206,6 +216,10 @@ namespace OOP_Lab2
         private void Push_Info_button_Click(object sender, EventArgs e)
         {
             AirportInfrastructure.Airport.Add(airplane);
+
+            //! NOTIFY
+            AirportInfrastructure.NotifyObservers();
+
             NumberValue.ResetText();
             TypeRadioButton1.Checked = false;
             TypeRadioButton2.Checked = false;
