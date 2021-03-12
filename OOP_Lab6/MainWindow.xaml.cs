@@ -29,20 +29,20 @@ namespace OOP_Lab6
             MenuSupportSub.Add(new SubItem("Return Policy"));
             var MenuSupport = new ItemMenu("Support", PackIconKind.Support, MenuSupportSub);
 
-            var MenuContacts = new ItemMenu("Contacts", PackIconKind.Contact, new UserControl());
-
             var MenuShopsSub = new List<SubItem>();
             MenuShopsSub.Add(new SubItem("Russia"));
             MenuShopsSub.Add(new SubItem("Belarus"));
             MenuShopsSub.Add(new SubItem("Ukraine"));
             var MenuShops = new ItemMenu("Shops", PackIconKind.Shop, MenuShopsSub);
 
+            var MenuContacts = new ItemMenu("Contacts", PackIconKind.Contact, new UserControl());
+
             var MenuInfoAboutUs = new ItemMenu("About us", PackIconKind.AboutCircleOutline, new UserControl());
 
             MenuPanel.Children.Add(new UserControlMenuItem(MenuProduct));
             MenuPanel.Children.Add(new UserControlMenuItem(MenuSupport));
-            MenuPanel.Children.Add(new UserControlMenuItem(MenuContacts));
             MenuPanel.Children.Add(new UserControlMenuItem(MenuShops));
+            MenuPanel.Children.Add(new UserControlMenuItem(MenuContacts));
             MenuPanel.Children.Add(new UserControlMenuItem(MenuInfoAboutUs));
         }
 

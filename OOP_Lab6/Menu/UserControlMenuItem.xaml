@@ -22,11 +22,12 @@
                                  Width="20" Height="20" Margin="20 25"
                                  Foreground="LightGray"/>
         <ListBoxItem Style="{StaticResource ListBoxItemMod}" x:Name="ListViewItemMenu" Content="{Binding Path=ItemName}"
-                     Padding="50 23" FontSize="18" Foreground="LightGray" FontFamily="Arial"/>
+                     Padding="55 23 0 23" FontSize="18" Foreground="LightGray" FontFamily="Arial"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
         <Expander Style="{StaticResource ExpanderMod}" x:Name="ExpanderMenu" Header="{Binding Path=ItemName}"
                   IsExpanded="False" Background="{x:Null}" Foreground="LightGray"
                   HorizontalAlignment="Left" VerticalAlignment="Center"
-                  Margin="35 0" Padding="0" TextElement.FontSize="18" TextOptions.TextHintingMode="Fixed" FontWeight="Bold">
+                  Margin="30 0 0 0" Padding="0" TextElement.FontSize="22">
             <ListView x:Name="ListViewMenu" ItemsSource="{Binding Path=SubItems}"
                   Foreground="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListView.ItemTemplate>
