@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="OOP_Lab6.Menu.UserControlMenuItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OOP_Lab6.Menu"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="0 0">
+        <Grid.Resources>
+            <Style x:Key="ExpanderMod" TargetType="Expander" BasedOn="{StaticResource MaterialDesignExpander}">
+                <Setter Property="Expander.FontFamily" Value="Arial"/>
+                <Setter Property="Expander.FontSize" Value="18"/>
+            </Style>
+            <Style x:Key="ListBoxItemMod" TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignListBoxItem}">
+                <Setter Property="ListBoxItem.FontFamily" Value="Arial"/>
+                <Setter Property="ListBoxItem.FontSize" Value="18"/>
+            </Style>
+        </Grid.Resources>
+        <materialDesign:PackIcon Kind="{Binding Path=Icon}" 
+                                 Width="20" Height="20" Margin="20 25"
+                                 Foreground="LightGray"/>
+        <ListBoxItem Style="{StaticResource ListBoxItemMod}" x:Name="ListViewItemMenu" Content="{Binding Path=ItemName}"
+                     Padding="50 23" FontSize="18" Foreground="LightGray" FontFamily="Arial"/>
+        <Expander Style="{StaticResource ExpanderMod}" x:Name="ExpanderMenu" Header="{Binding Path=ItemName}"
+                  IsExpanded="False" Background="{x:Null}" Foreground="LightGray"
+                  HorizontalAlignment="Left" VerticalAlignment="Center"
+                  Margin="35 0" Padding="0" TextElement.FontSize="18" TextOptions.TextHintingMode="Fixed" FontWeight="Bold">
+            <ListView x:Name="ListViewMenu" ItemsSource="{Binding Path=SubItems}"
+                  Foreground="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=SubName}" Padding="20 5"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Expander>
+    </Grid>
+</UserControl>
